@@ -43,21 +43,24 @@ class AgentController extends Controller
       $data->email = $request->email;
       $data->phone = $request->phone;
       $data->address = $request->address;
+      $data->agent_join = $request->agent_join;
+      $data->agent_short_info = $request->agent_short_info;
+
       @unlink(public_path('upload/admin_images/'.$data->photo));
 
       if ($request->file('photo')) {
         $file = $request->file('photo');
         $filename = date('YmdHi').$file->getClientOriginalName();
-        $file->move(public_path('upload/admin_images'),$filename);
+        $file->move(public_path('upload/agent_images'),$filename);
         $data['photo'] = $filename;
     }
         $data->save();
 
     $notification = array(
-        'message' => 'Admin Profile Updated Successfully',
+        'message' => 'Agent Profile Updated Successfully',
         'alert-type' => 'success'
     );
 
-    return redirect()->route('admin.profile')->with($notification);
+    return redirect()->route('agent.profile')->with($notification);
     } //End Method
 }
