@@ -6,7 +6,7 @@
 <meta charset="utf-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--favicon-->
-<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+<link rel="icon" href="{{asset('adminbackend/assets/images/favicon-32x32.png')}}" type="image/png" />
 <!--plugins-->
 <link href="{{asset('adminbackend/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet"/>
 <link href="{{asset('adminbackend/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
@@ -18,7 +18,7 @@
 <!-- Bootstrap CSS -->
 <link href="{{asset('adminbackend/assets/css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('adminbackend/assets/css/app.css')}}" rel="stylesheet">
-<link href="assets/css/icons.css" rel="stylesheet">
+<link href="{{asset('adminbackend/assets/css/icons.css')}}" rel="stylesheet">
 <!-- Theme Style CSS -->
 <link rel="stylesheet" href="{{asset('adminbackend/assets/css/dark-theme.css')}}" />
 <link rel="stylesheet" href="{{asset('adminbackend/assets/css/semi-dark.css')}}" />
@@ -60,7 +60,7 @@
 <script src="{{asset('adminbackend/assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
 <script src="{{asset('adminbackend/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
 <script src="{{asset('adminbackend/assets/plugins/chartjs/js/Chart.min.js')}}"></script>
-<script src="{{asset('adminbackend/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
+<script src="{{asset('adminbackend/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.j')}}s"></script>
 <script src="{{asset('adminbackend/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <script src="{{asset('adminbackend/assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js')}}"></script>
 <script src="{{asset('adminbackend/assets/plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>
