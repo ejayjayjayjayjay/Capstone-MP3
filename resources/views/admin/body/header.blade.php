@@ -322,6 +322,12 @@
     </li>
     </ul>
     </div>
+
+    @php
+        
+    @endphp
+
+
     <div class="user-box dropdown">
     <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <img src="{{asset('adminbackend/assets/images/avatars/avatar-8.png')}}" class="user-img" alt="user avatar">
