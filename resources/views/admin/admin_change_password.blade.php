@@ -29,23 +29,25 @@
                 <div class="card-body">
 
 
-            <form method="post" action="{{ route('admin.profile.store') }}">
+            <form method="post" action="{{ route('admin.update.password') }}">
                 @csrf
 
-                @if (session('status'))
+                @if (session("status"))
                     <div class="alert alert-success" role="alert">
-                        {{session('status')}}
+                        {{session("status")}}
                     </div>
-                @elseif(session('error'))
-                    <div class="alert alert-success" role="alert">
-                        {{session('error')}}
+                @elseif(session("error"))
+                    <div class="alert alert-danger" role="alert">
+                        {{session("error")}}
                     </div>
                 @endif
 
                 <div class="row mb-3">
-                    <label for="example-text-input" class="col-sm-2 col-form-label">Old Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" name="password" class="form-control @error('old_password') is-invalid @enderror" id="current_password"
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Old Password</h6>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="password" name="old_password" class="form-control @error('old_password') is-invalid @enderror" id="current_password"
                         placeholder="Old Password"/>
                         @error('old_password')
                             <span class="text-danger">{{$message}}</span>
@@ -55,8 +57,10 @@
                 <!-- end row -->
     
                 <div class="row mb-3">
-                    <label for="example-text-input" class="col-sm-2 col-form-label">New Password</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">New Password</h6>
+                    </div>
+                    <div class="col-sm-9">
                         <input type="password" name="new_password" class="form-control @error('new_password') is-invalid @enderror" id="new_password"
                         placeholder="Old Password"/>
                         @error('new_password')
@@ -67,8 +71,10 @@
                 <!-- end row -->
     
                 <div class="row mb-3">
-                    <label for="example-text-input" class="col-sm-2 col-form-label">Confirm New Password</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Confirm New Password</h6>
+                    </div>
+                    <div class="col-sm-9">
                         <input type="password" name="new_password_confirmation" class="form-control" id="new_password_confirmation"
                         placeholder="Confirm New Password"/>
                     </div>
