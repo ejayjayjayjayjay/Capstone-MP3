@@ -99,7 +99,14 @@
                         <h6 class="mb-0">Agent Join Date</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <input type="text" name="address" class="form-control" value="{{ $agentData->address }}" />
+                        <select class="form-select mb-3" aria-label="Default select example">
+                            <option selected="">Open this select menu</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
                     </div>
                 </div>
 
@@ -108,7 +115,7 @@
                         <h6 class="mb-0">Agent info</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <input type="text" name="address" class="form-control" value="{{ $agentData->address }}" />
+                        <textarea class="form-control" id="inputAddress2" placeholder="Address 2..." rows="3"></textarea>
                     </div>
                 </div>
 
