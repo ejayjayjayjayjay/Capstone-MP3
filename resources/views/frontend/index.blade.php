@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="lc-block mb-6"><a class="btn btn-primary px-4 me-md-2 btn-lg" href="./about.html" role="button">Learn More</a>
+                <div class="lc-block mb-6"><a class="btn btn-primary px-4 me-md-2 btn-lg" href="about" role="button">Learn More</a>
                 </div>
 
                 <div class="lc-block mb-5 mt-4">

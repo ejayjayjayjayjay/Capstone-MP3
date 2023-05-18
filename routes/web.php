@@ -15,9 +15,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Frontend pages
 
 Route::get('/', function () {
     return view('frontend.index');
+});
+Route::get('/about', function () {
+    return view('frontend.about');
+});
+Route::get('/services', function () {
+    return view('frontend.services');
+});
+Route::get('/contact', function () {
+    return view('frontend.contact');
 });
 
 Route::get('/dashboard', function () {
