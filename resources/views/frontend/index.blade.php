@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="lc-block mb-6"><a class="btn btn-primary px-4 me-md-2 btn-lg" href="about" role="button">Learn More</a>
+                <div class="lc-block mb-6"><a class="btn btn-warning px-4 me-md-2 btn-lg" href="about" role="button">Learn More</a>
                 </div>
 
                 <div class="lc-block mb-5 mt-4">
@@ -99,7 +99,7 @@
                     </div>
                     <div class="content text-center">
                         <p>necessitatibus laborum numquam consequuntur possimus magnam expedita ipsam illum voluptatem quia assumenda placeat, at asperiores vitae obcaecati. Reprehenderit nesciunt voluptatem excepturi, libero ipsum tempora perspiciatis.</p>
-                        <div class="person"><img alt="" src="{{asset('frontend/assets/images/client1.png')}}"></div>
+                        <div class="person"><img alt="" src="{{asset('frontend/assets/images/lemonSquareRound.png')}}"></div>
                         <h5>Lemon Square</h5>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="content text-center">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit reiciendis necessitatibus laborum numquam consequuntur possimus magnam expedita ipsam illum voluptatem quia assumenda placeat, at asperiores vitae obcaecati. Reprehenderit nesciunt voluptatem excepturi, libero ipsum tempora perspiciatis.</p>
-                        <div class="person"><img alt="" src="{{asset('frontend/assets/images/client2.png')}}"></div>
+                        <div class="person"><img alt="" src="{{asset('frontend/assets/images/oishiRound.png')}}"></div>
                         <h5>Oishi</h5>       
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                     </div>
                     <div class="content text-center">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit reiciendis necessitatibus laborum numquam consequuntur possimus magnam expedita ipsam illum voluptatem quia assumenda placeat, at asperiores vitae obcaecati. Reprehenderit nesciunt voluptatem excepturi, libero ipsum tempora perspiciatis.</p>
-                        <div class="person"><img alt="" src="{{asset('frontend/assets/images/client3.png')}}"></div>
+                        <div class="person"><img alt="" src="{{asset('frontend/assets/images/saverRound.png')}}"></div>
                         <h5>Ever Department</h5>
                     </div>
                 </div>
