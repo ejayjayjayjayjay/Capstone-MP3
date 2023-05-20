@@ -14,7 +14,7 @@ class AgentController extends Controller
     }//End Method
 
     public function AgentLogin() {
-        return view('agent.agent_login');
+        return view('login');
 
     } // End Method
 
