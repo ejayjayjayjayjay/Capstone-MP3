@@ -21,7 +21,15 @@
         </li>
 
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="{{ route('admin.profile') }}">
+                <div class="parent-icon"><i class="bx bx-support"></i>
+                </div>
+                <div class="menu-title">Profile</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('orders.index') }}">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>
                 </div>
                 <div class="menu-title">Orders</div>
@@ -29,10 +37,17 @@
         </li>
 
         <li>
-            <a href="" target="_blank">
+            <a href="{{ route('products.index') }}">
                 <div class="parent-icon"><i class="bx bx-support"></i>
                 </div>
-                <div class="menu-title">Support</div>
+                <div class="menu-title">Products</div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('customers.index') }}">
+                <div class="parent-icon"><i class="bx bx-support"></i>
+                </div>
+                <div class="menu-title">Customers</div>
             </a>
         </li>
     </ul>

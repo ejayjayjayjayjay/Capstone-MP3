@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('adminbackend/assets/images/UnitopLogo02.png')}}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="logo-icon" alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">Agent</h4>
@@ -33,7 +33,8 @@
                 </li>
                 <li> <a href="dashboard-analytics.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
                 </li>
-                <li> <a href="dashboard-digital-marketing.html"><i class="bx bx-right-arrow-alt"></i>Digital Marketing</a>
+                <li> <a href="dashboard-digital-marketing.html"><i class="bx bx-right-arrow-alt"></i>Digital
+                        Marketing</a>
                 </li>
                 <li> <a href="dashboard-human-resources.html"><i class="bx bx-right-arrow-alt"></i>Human Resources</a>
                 </li>
@@ -64,7 +65,7 @@
         </li>
 
 
-        
+
         <li class="menu-label">Charts & Maps</li>
         <li>
             <a class="has-arrow" href="javascript:;">
