@@ -10,6 +10,7 @@ body {
   overflow-x: hidden;
   font-family: 'Quicksand', sans-serif;
   font-family: 'Rubik', sans-serif;
+  background:#F0F8FF;
 }
 
 /* NAVBAR--START */
@@ -277,6 +278,10 @@ section p {
 }
 
 /* SERVICES --- START */
+
+.cont-services {
+    margin-top:20px;
+}
 
 
 /* GALLERY */

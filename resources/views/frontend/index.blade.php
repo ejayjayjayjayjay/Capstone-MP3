@@ -44,7 +44,7 @@
 <!-- HERO SECTION END -->
 
 <!-- SERVICES -- START -->
-<div class="row p-5 bg-light">
+<div class="row p-5">
 <div class="col-12 text-center">
     <h2>SAMPLE PRODUCTS</h2>
     <p>Some of our recent works that we have finished.</p>
