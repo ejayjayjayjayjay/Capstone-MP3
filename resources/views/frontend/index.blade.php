@@ -47,6 +47,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="lc-block mb-5">
                     <div editable="rich">
                         <p class="rfs-8"> Unitop Metalwire Technologies offer customs metal works and fabrications services
@@ -81,6 +82,10 @@
 
         </div><!-- /lc-block -->
     </div>
+=======
+            </div><!-- /lc-block -->
+        </div>
+>>>>>>> 836c8741ac0199d70634f177ef8dbf63d8705a05
     </div>
 
 
