@@ -46,83 +46,14 @@
                                 srcset="" sizes="" alt=""></div>
                     </div>
                 </div>
-
-<<<<<<< HEAD
-                <div class="lc-block mb-5">
-                    <div editable="rich">
-                        <p class="rfs-8"> Unitop Metalwire Technologies offer customs metal works and fabrications services
-                            which can bring to life your architectural vision. </p>
-                    </div>
-                </div>
-
-                <div class="lc-block mb-6"><a class="btn btn-warning px-4 me-md-2 btn-lg" href="about"
-                        role="button">Learn More</a>
-                </div>
-
-                <div class="lc-block mb-5 mt-4">
-                    <div editable="rich">
-                        <p class="fw-bold"> Some of our Clients based on trust:</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="lc-block col-3"><img class="img-fluid wp-image-975"
-                            src="{{ asset('frontend/assets/images/client1.png') }}" width="" height="300"
-                            srcset="" sizes="" alt=""></div>
-                    <div class="lc-block col-3"><img class="img-fluid wp-image-977"
-                            src="{{ asset('frontend/assets/images/client2.png') }}" width="" height="300"
-                            srcset="" sizes="" alt=""></div>
-                    <div class="lc-block col-3"><img class="img-fluid wp-image-974"
-                            src="{{ asset('frontend/assets/images/client3.png') }}" width="" height="300"
-                            srcset="" sizes="" alt=""></div>
-                    <div class="lc-block col-3"><img class="img-fluid wp-image-967"
-                            src="{{ asset('frontend/assets/images/client4.png') }}" width="" height="300"
-                            srcset="" sizes="" alt=""></div>
-                </div>
             </div>
 
         </div><!-- /lc-block -->
     </div>
-=======
-            </div><!-- /lc-block -->
-        </div>
->>>>>>> 836c8741ac0199d70634f177ef8dbf63d8705a05
     </div>
 
 
     <!-- HERO SECTION END -->
-
-    <!-- SERVICES -- START -->
-    <div class="row p-5">
-        <div class="col-12 text-center">
-            <h2>SAMPLE PRODUCTS</h2>
-            <p>Some of our recent works that we have finished.</p>
-        </div>
-        <div class="col-12 d-flex justify-content-center align-items-center text-center">
-            <div class="container">
-                <div class="row element">
-
-                    <div class="col-lg-4 p-5">
-                        <img class="img-fluid" src="{{ asset('frontend/assets/images/wireMesh.jpg') }}">
-                        <h5 class="mb-2"><b>WM 140</b></h5>
-                        <p>WIRE MESH (15 DIFFERENT SIZES)</p>
-                    </div>
-
-                    <div class="col-lg-4 p-5">
-                        <img class="img-fluid" src="{{ asset('frontend/assets/images/stackableBasket.jpg') }}">
-                        <h5 class="mb-2"><b>SB 50-L</b></h5>
-                        <p>STACKABLE BASKET ( CHIP RACK )</p>
-                    </div>
-
-                    <div class="col-lg-4 p-5">
-                        <img class="img-fluid" src="{{ asset('frontend/assets/images/revolving.jpg') }}">
-                        <h5 class="mb-2"><b>RSQ 52-L</b></h5>
-                        <p>REVOLVING SQUARE LONG</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- HERO SECTION END -->
 
             <!-- SERVICES -- START -->
             <div class="row p-5 bg-light">
