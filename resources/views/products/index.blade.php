@@ -60,7 +60,14 @@
             color: #fff;
         }
     </style>
-    <div class="card product-list">
+    <div class="d-flex align-items-center">
+        <div>
+            <h5 class="p-5 pb-2">Products</h5>
+        </div>
+        <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
+        </div>
+    </div>
+    <div class="card product-list container-fluid">
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">

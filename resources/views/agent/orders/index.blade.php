@@ -6,13 +6,6 @@
 @endsection
 
 @section('admin')
-    <div class="d-flex align-items-center">
-        <div>
-            <h5 class="p-5 pb-2">Latest Orders</h5>
-        </div>
-        <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
-        </div>
-    </div>
     <div class="container-fluid">
         <div class="card">
 

@@ -4,7 +4,7 @@
             <img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text">Admin</h4>
+            <h4 class="logo-text">Agent</h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -29,7 +29,7 @@
         </li>
 
         <li>
-            <a href="{{ route('orders.index') }}">
+            <a href="{{ route('agent.dashboard') }}">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>
                 </div>
                 <div class="menu-title">Orders</div>
@@ -37,14 +37,7 @@
         </li>
 
         <li>
-            <a href="{{ route('products.index') }}">
-                <div class="parent-icon"><i class="bx bx-support"></i>
-                </div>
-                <div class="menu-title">Products</div>
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('customers.index') }}">
+            <a href="{{ route('agent.dashboard') }}">
                 <div class="parent-icon"><i class="bx bx-support"></i>
                 </div>
                 <div class="menu-title">Customers</div>

@@ -39,7 +39,7 @@
                             <div class="card-body">
                                 <div class="border p-4 rounded">
                                     <div class="text-center">
-                                        <h3 class="">ADMIN SIGN IN</h3>
+                                        <h3 class="">SIGN IN</h3>
                                     </div>
                                     <div class="form-body">
                                         <form class="row g-3" method="POST" action="{{ route('login') }}">
@@ -68,15 +68,14 @@
                                                         for="flexSwitchCheckChecked">Remember Me</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 text-end"> <a
-                                                    href="authentication-forgot-password.html">Forgot Password ?</a>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="d-grid">
-                                                    <button type="submit" class="btn btn-primary"><i
-                                                            class="bx bxs-lock-open"></i>Sign in</button>
+                                            <div class="col-md-6 text-end">
+                                                <br>
+                                                <div class="col-12 text-center">
+                                                    <div class="d-grid">
+                                                        <button type="submit" class="btn btn-primary"><i
+                                                                class="bx bxs-lock-open"></i>Sign in</button>
+                                                    </div>
                                                 </div>
-                                            </div>
                                         </form>
                                     </div>
                                 </div>

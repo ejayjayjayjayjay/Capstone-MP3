@@ -62,7 +62,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
 
-    Route::get('/', [HomeController::class, 'index'])->name('admin.index');
+    Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('products', ProductController::class);
     Route::resource('customers', CustomerController::class);
     Route::resource('orders', OrderController::class);
@@ -82,6 +82,7 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::post('/agent/profile/store', [AgentController::class, 'AgentProfileStore'])->name('agent.profile.store');
     Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
     Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
+
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
