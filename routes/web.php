@@ -90,7 +90,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::delete('/cart/empty', [CartController::class, 'empty']);
 });
 
-Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 Route::get('/agent/login', [AgentController::class, 'AgentLogin']);
 
 
