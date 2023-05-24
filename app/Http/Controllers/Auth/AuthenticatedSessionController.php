@@ -36,9 +36,9 @@ class AuthenticatedSessionController extends Controller
 
         $url = '';
         if ($request->user()->role === 'admin') {
-            $url = 'admin/dashboard';
+            $url = '/admin/index';
         } elseif ($request->user()->role === 'agent') {
-            $url = 'agent/dashboard';
+            $url = '/agent/index';
         }
 
         return redirect()->intended($url)->with($notification);
@@ -55,6 +55,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('login');
     }
 }

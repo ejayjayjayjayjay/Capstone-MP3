@@ -2,14 +2,15 @@
 
 @section('title', 'Customer Management')
 @section('content-header', 'Customer Management')
-@section('content-actions')
-    <a href="{{ route('customers.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Customer</a>
-@endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
 @endsection
 @section('admin')
     <div class="d-flex align-items-center">
+        <div class="d-flex justify-content-center align-items-center mb-3">
+            <a href="{{ route('customers.create') }}" class="btn btn-primary btn-add-customer">Add Customer</a>
+        </div>
+
         <div>
             <h5 class="p-5 pb-2">Customers</h5>
         </div>

@@ -22,25 +22,25 @@
 
         <li>
             <a href="{{ route('agent.profile') }}">
-                <div class="parent-icon"><i class="bx bx-support"></i>
+                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
                 </div>
                 <div class="menu-title">Profile</div>
             </a>
         </li>
 
         <li>
-            <a href="{{ route('agent.dashboard') }}">
-                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+            <a href="{{ route('agent.profile') }}">
+                <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
-                <div class="menu-title">Orders</div>
+                <div class="menu-title">Add Order</div>
             </a>
         </li>
 
         <li>
-            <a href="{{ route('agent.dashboard') }}">
-                <div class="parent-icon"><i class="bx bx-support"></i>
+            <a href="{{ route('agent.profile') }}">
+                <div class="parent-icon"><i class='bx bxs-user'></i>
                 </div>
-                <div class="menu-title">Customers</div>
+                <div class="menu-title">Add Customer</div>
             </a>
         </li>
     </ul>

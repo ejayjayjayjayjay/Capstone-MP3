@@ -1,7 +1,7 @@
 @extends('admin.admin_dashboard')
 
-@section('title', 'Create Product')
-@section('content-header', 'Create Product')
+@section('title', 'Product Management')
+@section('content-header', 'Product Management')
 @section('admin')
     <style>
         /* Table styles */
@@ -59,8 +59,16 @@
             background-color: #dc3545;
             color: #fff;
         }
+
+        .btn-add-product {
+            margin-left: auto;
+        }
     </style>
     <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center mb-3">
+            <div class="flex-grow-5"></div>
+            <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>
+        </div>
         <div>
             <h5 class="p-5 pb-2">Products</h5>
         </div>

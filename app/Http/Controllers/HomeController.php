@@ -20,11 +20,6 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return Renderable
-     */
     public function index()
     {
         $orders = Order::with(['items', 'payments'])->get();

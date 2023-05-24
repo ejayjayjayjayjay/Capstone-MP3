@@ -22,7 +22,7 @@
 
         <li>
             <a href="{{ route('admin.profile') }}">
-                <div class="parent-icon"><i class="bx bx-support"></i>
+                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
                 </div>
                 <div class="menu-title">Profile</div>
             </a>
@@ -30,7 +30,7 @@
 
         <li>
             <a href="{{ route('orders.index') }}">
-                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
                 <div class="menu-title">Orders</div>
             </a>
@@ -38,18 +38,26 @@
 
         <li>
             <a href="{{ route('products.index') }}">
-                <div class="parent-icon"><i class="bx bx-support"></i>
+                <div class="parent-icon"><i class='bx bxs-cuboid'></i>
                 </div>
                 <div class="menu-title">Products</div>
             </a>
         </li>
         <li>
             <a href="{{ route('customers.index') }}">
-                <div class="parent-icon"><i class="bx bx-support"></i>
+                <div class="parent-icon"><i class='bx bxs-user'></i>
                 </div>
                 <div class="menu-title">Customers</div>
             </a>
         </li>
+        <li class="mb-5 pb-5">
+            <a href="{{ route('admin.logout') }}">
+                <div class="parent-icon"><i class='bx bx-log-out'></i>
+                </div>
+                <div class="menu-title">Logout</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
+
 </div>
