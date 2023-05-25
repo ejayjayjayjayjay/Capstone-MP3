@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -95,4 +96,14 @@ class AdminController extends Controller
             return back()->with("status", "Password Change Successfully");
 
     }//End Method
+
+        // Agent Management
+
+        public function AllAgent() {
+
+            /* return view('admin.all-agent'); */
+            $all = DB::table('users')->get();
+            return view('admin.all-agent', compact('all'));
+    
+        }//End Method
 }

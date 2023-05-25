@@ -29,6 +29,14 @@
         </li>
 
         <li>
+            <a href="{{ route('admin.allagent') }}">
+                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
+                </div>
+                <div class="menu-title">Add Agents</div>
+            </a>
+        </li>
+
+        <li>
             <a href="{{ route('orders.index') }}">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>

@@ -62,6 +62,12 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
 
+    // Agent Management Start
+    Route::get('/admin/all-agent', [AdminController::class, 'AllAgent'])->name('admin.allagent');
+
+
+    // Agent Management End
+
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('products', ProductController::class);
     Route::resource('customers', CustomerController::class);
