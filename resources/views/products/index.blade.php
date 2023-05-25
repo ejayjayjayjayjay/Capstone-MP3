@@ -65,12 +65,12 @@
         }
     </style>
     <div class="d-flex align-items-center">
+        <div>
+            <h5 class="p-5 pb-2">Products</h5>
+        </div>
         <div class="d-flex align-items-center mb-3">
             <div class="flex-grow-5"></div>
             <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>
-        </div>
-        <div>
-            <h5 class="p-5 pb-2">Products</h5>
         </div>
         <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
         </div>
@@ -110,11 +110,11 @@
                             <td>{{ $product->created_at }}</td>
                             <td>{{ $product->updated_at }}</td>
                             <td>
-                                <a href="{{ route('products.edit', $product) }}" class="btn btn-primary"><i
-                                        class="fas fa-edit"></i></a>
-                                <button class="btn btn-danger btn-delete"
-                                    data-url="{{ route('products.destroy', $product) }}"><i
-                                        class="fas fa-trash"></i></button>
+                                <a href="{{ route('products.edit', $product) }}" class="btn btn-primary">
+                                    <i class='bx bxs-edit'></i>
+                                </a><button class="btn btn-danger btn-delete"
+                                    data-url="{{ route('products.destroy', $product) }}">
+                                    <i class='bx bx-trash'></i>
                             </td>
                         </tr>
                     @endforeach

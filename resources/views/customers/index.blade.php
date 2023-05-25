@@ -2,17 +2,13 @@
 
 @section('title', 'Customer Management')
 @section('content-header', 'Customer Management')
-@section('css')
-    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
-@endsection
 @section('admin')
     <div class="d-flex align-items-center">
-        <div class="d-flex justify-content-center align-items-center mb-3">
-            <a href="{{ route('customers.create') }}" class="btn btn-primary btn-add-customer">Add Customer</a>
-        </div>
-
         <div>
             <h5 class="p-5 pb-2">Customers</h5>
+        </div>
+        <div class="d-flex justify-content-end align-items-end mb-3">
+            <a href="{{ route('customers.create') }}" class="btn btn-primary btn-add-customer">Add Customer</a>
         </div>
         <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
         </div>
@@ -46,11 +42,11 @@
                             <td>{{ $customer->address }}</td>
                             <td>{{ $customer->created_at }}</td>
                             <td>
-                                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary"><i
-                                        class="fas fa-edit"></i></a>
-                                <button class="btn btn-danger btn-delete"
-                                    data-url="{{ route('customers.destroy', $customer) }}"><i
-                                        class="fas fa-trash"></i></button>
+                                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary">
+                                    <i class='bx bxs-edit'></i>
+                                </a><button class="btn btn-danger btn-delete"
+                                    data-url="{{ route('customers.destroy', $customer) }}">
+                                    <i class='bx bx-trash'></i>
                             </td>
                         </tr>
                     @endforeach
