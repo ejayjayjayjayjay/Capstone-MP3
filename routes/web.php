@@ -64,8 +64,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     // Agent Management Start
     Route::get('/admin/all-agent', [AdminController::class, 'AllAgent'])->name('admin.allagent');
-
-
+    Route::get('/admin/add-agent-index', [AdminController::class, 'AddAgentIndex'])->name('admin.AddAgentIndex');
+    Route::post('insert-agent', [AdminController::class, 'InsertAgent'])->name('admin.Insertagent');
     // Agent Management End
 
     Route::get('/', [HomeController::class, 'index'])->name('index');

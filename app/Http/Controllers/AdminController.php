@@ -106,4 +106,29 @@ class AdminController extends Controller
             return view('admin.all-agent', compact('all'));
     
         }//End Method
+
+        public function AddAgentIndex() {
+
+            return view('admin.add_agent');
+    
+        }//End Method
+
+        public function InsertAgent(Request $request) {
+
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'role' => $request->role,
+                'password' => Hash::make($request->password),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+            
+            $insert = User::insert($data);
+            if ($insert) {
+                echo "successful";
+            } else {
+                echo "Something is wrong";
+            }
+        }//End Method
 }
