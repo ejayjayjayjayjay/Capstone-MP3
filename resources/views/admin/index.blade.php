@@ -1,4 +1,5 @@
 @extends('admin.admin_dashboard')
+
 @section('admin')
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <div class="d-flex align-items-center">

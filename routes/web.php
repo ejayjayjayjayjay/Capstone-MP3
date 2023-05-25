@@ -89,6 +89,10 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
     Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 
+    Route::get('/agent/orderadd', function () {
+    return view('agent.orderadd');
+});
+
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
     Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
@@ -98,6 +102,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 Route::get('/agent/login', [AgentController::class, 'AgentLogin']);
+
+
+
 
 
 

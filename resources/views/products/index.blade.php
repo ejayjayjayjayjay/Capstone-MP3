@@ -4,73 +4,126 @@
 @section('content-header', 'Product Management')
 @section('admin')
     <style>
-        /* Table styles */
-        .table-bordered {
-            border: 1px solid #ddd;
-        }
-
-        .table-hover tbody tr:hover {
+        .d-flex.align-items-center {
             background-color: #f5f5f5;
+            padding: 10px;
         }
 
-        .table th,
-        .table td {
+        h5.p-5.pb-2 {
+            margin: 0;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .font-22.ms-auto {
+            font-size: 22px;
+            color: #777;
+            cursor: pointer;
+        }
+
+        .container-fluid {
+            padding: 20px;
+        }
+
+        .card {
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        form[action="{{ route('orders.index') }}"] {
+            margin-bottom: 20px;
+        }
+
+        .col-md-5 {
+            padding-right: 10px;
+        }
+
+        input[type="date"].form-control {
+            border-radius: 5px;
+            border: 1px solid #ccc;
             padding: 8px;
-            vertical-align: middle;
+            width: 100%;
         }
 
-        /* Image styles */
-        .product-img {
-            max-width: 100px;
-            max-height: 100px;
+        .col-md-2 {
+            padding-left: 10px;
         }
 
-        /* Badge styles */
-        .badge {
+        .btn.btn-primary {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+        }
+
+        .btn.btn-primary i {
+            margin-right: 5px;
+        }
+
+        table.table.table-bordered.table-hover {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead.thead-dark {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        span.badge {
             padding: 5px 10px;
-            font-size: 12px;
             border-radius: 20px;
-            text-transform: uppercase;
+            font-size: 14px;
         }
 
-        .badge-success {
+        span.badge-danger {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        span.badge-warning {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        span.badge-success {
             background-color: #28a745;
             color: #fff;
         }
 
-        .badge-danger {
-            background-color: #dc3545;
+        span.badge-info {
+            background-color: #17a2b8;
             color: #fff;
         }
 
-        /* Button styles */
-        .btn {
-            padding: 5px 10px;
-            font-size: 14px;
-            border-radius: 4px;
+        tfoot {
+            font-weight: bold;
         }
 
-        .btn-primary {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .btn-danger {
-            background-color: #dc3545;
-            color: #fff;
-        }
-
-        .btn-add-product {
-            margin-left: auto;
+        tfoot th {
+            text-align: right;
         }
     </style>
+
     <div class="d-flex align-items-center">
         <div>
             <h5 class="p-5 pb-2">Products</h5>
         </div>
         <div class="d-flex align-items-center mb-3">
             <div class="flex-grow-5"></div>
-            <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>
+            <a href="{{ route('products.create') }}" class="btn btn-success">Add Product</a>
         </div>
         <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
         </div>
