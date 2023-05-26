@@ -57,7 +57,7 @@
 
                                 <td>
                                     <a href="{{ URL::to('/admin/edit-agent/'.$row->id)}}" class="btn btn-sm btn-info">Edit</a>
-                                    <a href="{{ URL::to('/admin.delete-agent') }}" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="{{ URL::to('/admin/delete-agent/'.$row->id) }}" class="btn btn-sm btn-danger">Delete</a>
                                 </td>
 
                             </tr>

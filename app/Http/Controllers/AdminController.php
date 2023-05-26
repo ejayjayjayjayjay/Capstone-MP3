@@ -138,4 +138,41 @@ class AdminController extends Controller
             return view('admin.edit_agent',compact('edit'));
     
         }//End Method
+
+        public function UpdateAgent(Request $request,$id) {
+
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'role' => $request->role,
+                'password' => Hash::make($request->password),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+            
+            $update = DB::table('users')
+                ->where('id', $id)
+                ->update($data);
+            
+            if ($update) {
+                return view('admin.add_agent');
+            } else {
+                echo "Something is wrong";
+            }
+    
+        }//End Method
+
+        public function DeleteAgent($id) {
+
+            $delete = DB::table('users')->where('id',$id)->delete();
+            if ($delete) 
+            {
+                echo "User Successfully Deleted";
+            }
+            else 
+            {
+                echo "Something is Wrong";
+            }
+    
+        }//End Method
 }

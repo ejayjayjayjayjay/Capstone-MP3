@@ -14,7 +14,7 @@
                     </h5>
                 </div>
             <div class="card-body">
-                <form role="form" action="{{URL::to('/insert-agent')}}" method="post">
+                <form role="form" action="{{URL::to('/update-agent/'.$edit->id)}}" method="post">
                     @csrf
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">Agent Name</label>
