@@ -1,6 +1,5 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
@@ -73,11 +72,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::resource('customers', CustomerController::class);
     Route::resource('orders', OrderController::class);
 
-    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-    Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
-    Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
-    Route::delete('/cart/delete', [CartController::class, 'delete']);
-    Route::delete('/cart/empty', [CartController::class, 'empty']);
 });
 //Agent Dashboard
 
@@ -89,15 +83,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
     Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 
-    Route::get('/agent/orderadd', function () {
-    return view('agent.orderadd');
-});
-
-    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-    Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
-    Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
-    Route::delete('/cart/delete', [CartController::class, 'delete']);
-    Route::delete('/cart/empty', [CartController::class, 'empty']);
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
