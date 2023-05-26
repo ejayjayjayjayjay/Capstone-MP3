@@ -126,7 +126,7 @@ class AdminController extends Controller
             
             $insert = User::insert($data);
             if ($insert) {
-                echo "successful";
+                return view('admin.add_agent');
             } else {
                 echo "Something is wrong";
             }
