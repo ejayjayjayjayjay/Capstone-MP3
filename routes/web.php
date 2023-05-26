@@ -66,7 +66,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/all-agent', [AdminController::class, 'AllAgent'])->name('admin.allagent');
     Route::get('/admin/add-agent-index', [AdminController::class, 'AddAgentIndex'])->name('admin.AddAgentIndex');
     Route::post('insert-agent', [AdminController::class, 'InsertAgent'])->name('admin.Insertagent');
-    Route::get('/edit-agent{id}', [AdminController::class, 'EditAgent'])->name('admin.Editagent');
+    Route::get('/admin/edit-agent/{id}', [AdminController::class, 'EditAgent'])->name('admin.Editagent');
     // Agent Management End
 
     Route::get('/', [HomeController::class, 'index'])->name('index');
