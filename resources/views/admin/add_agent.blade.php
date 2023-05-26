@@ -40,7 +40,7 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">User Role Type</label>
                         <div class="col-sm-10">
-                            <select class="form-controle" name="role" id="exampleFormControlSelect1" required>
+                            <select class="form-control" name="role" id="exampleFormControlSelect1" required>
                                 <option value="Admin">Admin</option>
                                 <option value="Agent">Agent</option>
                             </select>
