@@ -131,4 +131,11 @@ class AdminController extends Controller
                 echo "Something is wrong";
             }
         }//End Method
+
+        public function EditAgent($id) {
+
+            $edit = DB::table('users')->where('id',$id)->first();
+            return view('admin.edit_agent',compact('edit'));
+    
+        }//End Method
 }
