@@ -127,13 +127,13 @@ class AdminController extends Controller
             $insert = User::insert($data);
             if ($insert) {
                 $notification = array(
-                    'message' => 'New User Inserted Successfully',
+                    'message' => 'Successfully Inserted New User',
                     'alert-type' => 'success'
                 );
                 return redirect()->route('admin.allagent')->with($notification);
             } else {
                 $notification = array(
-                    'message' => 'Something is Wrong',
+                    'message' => 'Something is Wrong, Please Try Again!',
                     'alert-type' => 'error'
                 );
                 return redirect()->route('admin.allagent')->with($notification);
@@ -163,9 +163,17 @@ class AdminController extends Controller
                 ->update($data);
             
             if ($update) {
-                return view('admin.add_agent');
+                $notification = array(
+                    'message' => 'Successfully User Updated',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('admin.allagent')->with($notification);
             } else {
-                echo "Something is wrong";
+                $notification = array(
+                    'message' => 'Something is Wrong, Please Try Again!',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('admin.allagent')->with($notification);
             }
     
         }//End Method
@@ -175,11 +183,19 @@ class AdminController extends Controller
             $delete = DB::table('users')->where('id',$id)->delete();
             if ($delete) 
             {
-                echo "User Successfully Deleted";
+                $notification = array(
+                    'message' => 'Successfully Deleted',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('admin.allagent')->with($notification);
             }
             else 
             {
-                echo "Something is Wrong";
+                $notification = array(
+                    'message' => 'Something is Wrong, Please Try Again!',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('admin.allagent')->with($notification);
             }
     
         }//End Method
