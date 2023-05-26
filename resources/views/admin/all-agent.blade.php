@@ -11,7 +11,7 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Agent Table</li>
+                        <li class="breadcrumb-item active" aria-current="page">Users Table</li>
                     </ol>
                 </nav>
             </div>
@@ -29,7 +29,7 @@
             </div> --}}
         </div>
         <!--end breadcrumb-->
-        <h6 class="mb-0 text-uppercase">All Agents</h6>
+        <h6 class="mb-0 text-uppercase">Admin/Agents</h6>
         <hr/>
         <div class="card">
             <div class="card-body">

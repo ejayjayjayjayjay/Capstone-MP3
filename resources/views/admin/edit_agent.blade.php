@@ -41,8 +41,8 @@
                         <label for="name" class="col-sm-2 col-form-label">User Role Type</label>
                         <div class="col-sm-10">
                             <select class="form-control" name="role" id="exampleFormControlSelect1" required>
-                                <option value="Admin" {{'Admin' == $edit->role ? 'selected' : ''}}>Admin</option>
-                                <option value="Agent" {{'Agent' == $edit->role ? 'selected' : ''}}>Agent</option>
+                                <option value="Admin" {{'admin' == $edit->role ? 'selected' : ''}}>Admin</option>
+                                <option value="Agent" {{'agent' == $edit->role ? 'selected' : ''}}>Agent</option>
                             </select>
                         </div>
                     </div>
