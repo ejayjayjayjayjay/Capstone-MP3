@@ -126,9 +126,17 @@ class AdminController extends Controller
             
             $insert = User::insert($data);
             if ($insert) {
-                return view('admin.add_agent');
+                $notification = array(
+                    'message' => 'New User Inserted Successfully',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('admin.allagent')->with($notification);
             } else {
-                echo "Something is wrong";
+                $notification = array(
+                    'message' => 'Something is Wrong',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('admin.allagent')->with($notification);
             }
         }//End Method
 
