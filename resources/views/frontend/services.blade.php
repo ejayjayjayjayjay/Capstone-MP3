@@ -91,7 +91,7 @@
 
                 <div class="col-sm-6 col-md-4 text-center">
                     <div class="thumbnail">
-                        <a class="lightbox" href="{{ asset('frontend/assets/images/bicycleBasket.jpg') }}">
+                        {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/bicycleBasket.jpg') }}"> --}}
                             <img class="img-fluid" src="{{ asset('frontend/assets/images/bicycleBasket.jpg') }}"
                                 alt="">
                         </a>
@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
                     <div class="thumbnail">
-                        <a class="lightbox" href="{{ asset('frontend/assets/images/apCabinetBasket.jpg') }}">
+                        {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/apCabinetBasket.jpg') }}"> --}}
                             <img src="{{ asset('frontend/assets/images/apCabinetBasket.jpg') }}" alt="Bridge">
                         </a>
                         <div class="caption">
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
                     <div class="thumbnail">
-                        <a class="lightbox" href="{{ asset('frontend/assets/images/showerCaddy.jpg') }}">
+                        {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/showerCaddy.jpg') }}"> --}}
                             <img src="{{ asset('frontend/assets/images/showerCaddy.jpg') }}" alt="Tuneel">
                         </a>
                         <div class="caption">
@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
                     <div class="thumbnail">
-                        <a class="lightbox" href="{{ asset('frontend/assets/images/doubleDeck.jpg') }}">
+                        {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/doubleDeck.jpg') }}"> --}}
                             <img src="{{ asset('frontend/assets/images/doubleDeck.jpg') }}" alt="Coast">
                         </a>
                         <div class="caption">
@@ -136,7 +136,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
                     <div class="thumbnail">
-                        <a class="lightbox" href="{{ asset('frontend/assets/images/hangingPlate.jpg') }}">
+                        {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/hangingPlate.jpg') }}"> --}}
                             <img src="{{ asset('frontend/assets/images/hangingPlate.jpg') }}" alt="Rails">
                         </a>
                         <div class="caption">
@@ -147,7 +147,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
                     <div class="thumbnail">
-                        <a class="lightbox" href="{{ asset('frontend/assets/images/openBasket.jpg') }}">
+                        {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/openBasket.jpg') }}"> --}}
                             <img src="{{ asset('frontend/assets/images/openBasket.jpg') }}" alt="Traffic">
                         </a>
                         <div class="caption">
