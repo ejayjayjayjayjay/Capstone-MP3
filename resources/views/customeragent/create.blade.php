@@ -1,9 +1,9 @@
-@extends('agent.agent_dashboard')
+@extends('admin.admin_dashboard')
 
 @section('title', 'Create Customer')
 @section('content-header', 'Create Customer')
 
-@section('agent')
+@section('admin')
 
     <div class="card">
         <div class="card-body">

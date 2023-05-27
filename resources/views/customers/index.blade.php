@@ -1,8 +1,8 @@
-@extends('admin.admin_dashboard')
+@extends('agent.agent_dashboard')
 
 @section('title', 'Customer Management')
 @section('content-header', 'Customer Management')
-@section('admin')
+@section('agent')
     <style>
         .d-flex.align-items-center {
             background-color: #f5f5f5;
@@ -119,7 +119,7 @@
 
     <div class="d-flex align-items-center">
         <div>
-            <h5 class="p-5 pb-2">Customers</h5>
+            <h5 class="p-5 pb-2">Customers List</h5>
         </div>
         <div class="d-flex justify-content-end align-items-end mb-3">
             <a href="{{ route('customers.create') }}" class="btn btn-success btn-add-customer">Add Customer</a>

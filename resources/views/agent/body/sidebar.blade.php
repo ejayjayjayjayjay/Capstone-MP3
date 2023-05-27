@@ -29,7 +29,15 @@
         </li>
 
         <li>
-            <a href="{{ route('agent.profile') }}">
+            <a href="{{ route('orderagent.index') }}">
+                <div class="parent-icon"><i class='bx bx-cart'></i>
+                </div>
+                <div class="menu-title">Status of Orders</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('ordercreate.index') }}">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
                 <div class="menu-title">Add Order</div>
@@ -37,10 +45,18 @@
         </li>
 
         <li>
-            <a href="{{ route('agent.profile') }}">
+            <a href="{{ route('customers.index') }}">
                 <div class="parent-icon"><i class='bx bxs-user'></i>
                 </div>
                 <div class="menu-title">Add Customer</div>
+            </a>
+        </li>
+
+        <li class="mb-5 pb-5">
+            <a href="{{ route('admin.logout') }}">
+                <div class="parent-icon"><i class='bx bx-log-out'></i>
+                </div>
+                <div class="menu-title">Logout</div>
             </a>
         </li>
     </ul>

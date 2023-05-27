@@ -29,15 +29,18 @@
         </li>
 
         <div class="dropdown">
-            <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              User Management
+            <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                User Management
             </a>
-          
+
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="{{ route('admin.allagent') }}"><i class='bx bxs-user-detail'></i>All Users</a></li>
-              <li><a class="dropdown-item" href="{{ route('admin.AddAgentIndex') }}"><i class='bx bxs-user-detail'></i>Add Users</a></li>
+                <li><a class="dropdown-item" href="{{ route('admin.allagent') }}"><i class='bx bxs-user-detail'></i>All
+                        Users</a></li>
+                <li><a class="dropdown-item" href="{{ route('admin.AddAgentIndex') }}"><i
+                            class='bx bxs-user-detail'></i>Add Users</a></li>
             </ul>
-          </div>
+        </div>
 
         <li>
             <a href="{{ route('orders.index') }}">
@@ -55,7 +58,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('customers.index') }}">
+            <a href="{{ route('customeragent.index') }}">
                 <div class="parent-icon"><i class='bx bxs-user'></i>
                 </div>
                 <div class="menu-title">Customers</div>

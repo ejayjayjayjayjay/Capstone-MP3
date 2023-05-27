@@ -1,10 +1,7 @@
 @extends('admin.admin_dashboard')
 
-@section('title', 'Product Management')
-@section('content-header', 'Product Management')
-@section('css')
-    <link rel="stylesheet" href="{{ asset('/resources/css/app.css') }}">
-@endsection
+@section('title', 'Customer Management')
+@section('content-header', 'Customer Management')
 @section('admin')
     <style>
         .d-flex.align-items-center {
@@ -120,66 +117,50 @@
         }
     </style>
     <div class="text-center">
-        <h3 class="p-5 pb-2 font-weight-bold">Products</h3>
+        <h3 class="p-5 pb-2 font-weight-bold">Customers List</h3>
     </div>
     <div class="d-flex align-items-center">
-        <div class="d-flex align-items-center mb-3">
-            <div class="flex-grow-5"></div>
-            <a href="{{ route('products.create') }}" class="btn btn-success">Add Product</a>
-        </div>
         <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
         </div>
     </div>
-    <div class="card product-list container-fluid">
+    <div class="card container-fluid">
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
-
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Barcode</th>
-                        <th>Price</th>
+                        <th>Product</th>
+                        <th>Customer</th>
                         <th>Quantity</th>
+                        <th>Total</th>
                         <th>Status</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Agent</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($products as $product)
+                    @foreach ($customers as $customer)
                         <tr>
-                            <td>{{ $product->id }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td><img class="product-img img-thumbnail" src="{{ Storage::url($product->image) }}"
-                                    alt=""></td>
-                            <td>{{ $product->barcode }}</td>
-                            <td>{{ config('settings.currency_symbol') }}{{ $product->price }}</td>
-                            <td>{{ $product->quantity }}</td>
+                            <td>{{ $customer->id }}</td>
                             <td>
-                                <span
-                                    class="right badge badge-{{ $product->status ? 'success' : 'danger' }}">{{ $product->status ? 'Active' : 'Inactive' }}</span>
+                                <img width="40px" class="img-thumbnail" src="{{ $customer->getAvatarUrl() }}"
+                                    alt="">
                             </td>
-                            <td>{{ $product->created_at }}</td>
-                            <td>{{ $product->updated_at }}</td>
+                            <td>{{ $customer->first_name }} {{ $customer->last_name }}</td>
+                            <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->phone }}</td>
+                            <td>{{ $customer->address }}</td>
+                            <td>{{ $customer->created_at }}</td>
                             <td>
-                                <a href="{{ route('products.edit', $product) }}" class="btn btn-primary">
+                                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary">
                                     <i class='bx bxs-edit'></i>
-                                </a>
-                            </td>
-                            <td>
-                                <button class="btn btn-danger btn-delete"
-                                    data-url="{{ route('products.destroy', $product) }}"><i
-                                        class="bx bxs-trash"></i></button>
+                                </a><button class="btn btn-danger btn-delete"
+                                    data-url="{{ route('customers.destroy', $customer) }}">
+                                    <i class='bx bx-trash'></i>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            {{ $products->render() }}
+            {{ $customers->render() }}
         </div>
     </div>
 @endsection
@@ -200,7 +181,7 @@
 
                 swalWithBootstrapButtons.fire({
                     title: 'Are you sure?',
-                    text: "Do you really want to delete this product?",
+                    text: "Do you really want to delete this customer?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonText: 'Yes, delete it!',

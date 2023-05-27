@@ -1,11 +1,11 @@
-@extends('admin.admin_dashboard')
+@extends('agent.agent_dashboard')
 
 @section('title', 'Orders List')
 @section('content-header', 'Order List')
 @section('content-actions')
 @endsection
 
-@section('admin')
+@section('agent')
     <style>
         .d-flex.align-items-center {
             background-color: #f5f5f5;
@@ -125,38 +125,13 @@
             justify-content: center;
         }
     </style>
-    <div class="d-flex align-items-center">
-        <div>
-            <h5 class="p-5 pb-2 text-align-center">Latest Orders</h5>
-        </div>
-        <div class="font-22 ms-auto">
-            <i class="bx bx-dots-horizontal-rounded"></i>
-        </div>
-    </div>
+
     <div class="container-fluid">
+        <div class="text-center">
+            <h3 class="p-5 pb-2 font-weight-bold">Order Status</h3>
+        </div>
         <div class="card">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <form action="{{ route('orders.index') }}" method="GET">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <input type="date" name="start_date" class="form-control"
-                                        value="{{ request('start_date') }}" />
-                                </div>
-                                <div class="col-md-5">
-                                    <input type="date" name="end_date" class="form-control"
-                                        value="{{ request('end_date') }}" />
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-primary" type="submit">
-                                        <i class="fas fa-filter"></i> Filter
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <hr>
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
@@ -164,8 +139,9 @@
                             <th>Product</th>
                             <th>Customer</th>
                             <th>Quantity</th>
+                            <th>Total</th>
                             <th>Status</th>
-                            <th>Created At</th>
+                            <th>Agent</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -179,8 +155,14 @@
                                     @endif
                                 </td>
                                 <td>{{ $order->quantity }}</td>
+                                <td>{{ $order->total }}</td>
                                 <td>{{ $order->status }}</td>
-                                <td>{{ $order->created_at }}</td>
+                                <td>
+                                    {{ $order->user_id }}
+                                    @if ($order->users)
+                                        ({{ $order->users->role }})
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -190,11 +172,9 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
                         </tr>
                     </tfoot>
                 </table>
-                {{ $orders->render() }}
             </div>
         </div>
     </div>

@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use App\Http\Resources\ProductResource;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
+use App\Http\Resources\ProductResource;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use view;
 
 class ProductController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
         $products = new Product();
@@ -26,13 +30,22 @@ class ProductController extends Controller
         return view('products.index')->with('products', $products);
     }
 
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         return view('products.create');
     }
 
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(ProductStoreRequest $request)
     {
         $image_path = '';
@@ -57,18 +70,30 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Success, New product has been added successfully!');
     }
 
-
-    public function show(Product $product)
-    {
-        //
-    }
-
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
     public function edit(Product $product)
     {
         return view('products.edit')->with('product', $product);
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
     public function update(ProductUpdateRequest $request, Product $product)
     {
         $product->name = $request->name;
@@ -95,8 +120,12 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Success, Product has been updated.');
     }
 
-
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Product $product)
     {
         if ($product->image) {
@@ -108,5 +137,5 @@ class ProductController extends Controller
             'success' => true
         ]);
     }
+
 }
-// public function edit(Product $product)

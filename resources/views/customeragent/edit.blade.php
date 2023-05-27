@@ -1,20 +1,21 @@
-@extends('agent.agent_dashboard')
+@extends('admin.admin_dashboard')
 
-@section('title', 'Create Customer')
-@section('content-header', 'Create Customer')
+@section('title', 'Update Customer')
+@section('content-header', 'Update Customer')
 
-@section('agent')
+@section('admin')
 
     <div class="card">
         <div class="card-body">
 
-            <form action="{{ route('customers.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('customers.update', $customer) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
                 <div class="form-group">
                     <label for="first_name">First Name</label>
                     <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
-                        id="first_name" placeholder="First Name" value="{{ old('first_name') }}">
+                        id="first_name" placeholder="First Name" value="{{ old('first_name', $customer->first_name) }}">
                     @error('first_name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -25,7 +26,7 @@
                 <div class="form-group">
                     <label for="last_name">Last Name</label>
                     <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
-                        id="last_name" placeholder="Last Name" value="{{ old('last_name') }}">
+                        id="last_name" placeholder="Last Name" value="{{ old('last_name', $customer->last_name) }}">
                     @error('last_name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -36,7 +37,7 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
-                        id="email" placeholder="Email" value="{{ old('email') }}">
+                        id="email" placeholder="Email" value="{{ old('email', $customer->email) }}">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -45,9 +46,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Contact Number</label>
+                    <label for="phone">Phone</label>
                     <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
-                        id="phone" placeholder="Contact Number" value="{{ old('phone') }}">
+                        id="phone" placeholder="Phone" value="{{ old('phone', $customer->phone) }}">
                     @error('phone')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -58,7 +59,7 @@
                 <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"
-                        id="address" placeholder="Address" value="{{ old('address') }}">
+                        id="address" placeholder="Address" value="{{ old('address', $customer->address) }}">
                     @error('address')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -70,7 +71,7 @@
                     <label for="avatar">Avatar</label>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" name="avatar" id="avatar">
-                        <label class="custom-file-label" for="avatar">Choose File</label>
+                        <label class="custom-file-label" for="avatar">Choose file</label>
                     </div>
                     @error('avatar')
                         <span class="invalid-feedback" role="alert">
@@ -80,7 +81,7 @@
                 </div>
 
 
-                <button class="btn btn-success btn-block btn-lg" type="submit">Submit</button>
+                <button class="btn btn-success btn-block btn-lg" type="submit">Save Changes</button>
             </form>
         </div>
     </div>

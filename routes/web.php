@@ -7,7 +7,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\OrderagentController;
+use App\Http\Controllers\OrderCreateController;
+use App\Http\Controllers\CustomeragentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +74,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('products', ProductController::class);
-    Route::resource('customers', CustomerController::class);
+    Route::resource('customeragent', CustomeragentController::class);
     Route::resource('orders', OrderController::class);
 
 });
@@ -86,6 +88,16 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
     Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::resource('orderagent', OrderagentController::class);
+    Route::resource('customers', CustomerController::class);
+
+
+    Route::get('/orders/create', [OrderCreateController::class, 'create'])
+        ->name('ordercreate.index');
+
+    Route::post('/orders', [OrderCreateController::class, 'store'])
+        ->name('ordercreate.store');
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
