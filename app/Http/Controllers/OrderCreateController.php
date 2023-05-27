@@ -15,7 +15,7 @@ class OrderCreateController extends Controller
         $products = Product::pluck('name', 'id');
         $productPrices = Product::pluck('price', 'id');
         $customers = Customer::pluck('first_name', 'id');
-        $users = User::pluck('first_name', 'id');
+        $users = User::pluck('name', 'id');
 
         return view('ordercreate.index', compact('products', 'productPrices', 'customers', 'users'));
     }

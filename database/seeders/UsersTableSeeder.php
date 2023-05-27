@@ -17,8 +17,8 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             //Admin
             [
-                'first_name' => 'Admin',
-                'last_name' => 'Admin',
+                'name' => 'Admin',
+                'username' => 'Admin',
                 'email' => 'admin@gmail.com',
                 'password' => Hash::make('111'),
                 'role' => 'admin',
@@ -26,8 +26,8 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
-                'first_name' => 'Agent',
-                'last_name' => 'Agent',
+                'name' => 'Agent',
+                'username' => 'Agent',
                 'email' => 'agent@gmail.com',
                 'password' => Hash::make('111'),
                 'role' => 'agent',
@@ -35,8 +35,8 @@ class UsersTableSeeder extends Seeder
             ],
 
             [
-                'first_name' => 'Agent2',
-                'last_name' => 'Agent',
+                'name' => 'Agent2',
+                'username' => 'Agent',
                 'email' => 'agent2@gmail.com',
                 'password' => Hash::make('111'),
                 'role' => 'agent',
