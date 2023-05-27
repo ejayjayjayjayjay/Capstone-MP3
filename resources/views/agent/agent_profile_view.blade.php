@@ -28,7 +28,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="{{ (!empty($agentData->photo)) ? url('upload/agent_images/'.$agentData->photo):url('upload/no_image.jpg') }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+                                <img src="{{ (!empty($agentData->photo)) ? url('upload/agent_images/'.$agentData->photo):url('upload/no_image.jpg') }}" alt="Agent" class="rounded-circle p-1 bg-primary" width="110">
                                 <div class="mt-3">
                                     <h4>{{ $agentData->name }}</h4>
                                     <p class="text-secondary mb-1">{{ $agentData->email }}</p>
