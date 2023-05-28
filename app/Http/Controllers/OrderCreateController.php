@@ -20,7 +20,6 @@ class OrderCreateController extends Controller
         return view('ordercreate.index', compact('products', 'productPrices', 'customers', 'users'));
     }
 
-
     public function store(Request $request)
     {
         $order = new Order();
