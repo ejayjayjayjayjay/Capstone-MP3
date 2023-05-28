@@ -96,9 +96,7 @@
                         <div class="col-sm-12">
                             <div class="section-header text-center">
                                 <h4>What Clients Says</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat at animi unde, et,
-                                    obcaecati
-                                    eius.</p>
+                                <p>Testimonials from Satisfied Customers.</p>
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -117,11 +115,7 @@
                                             <i class="fa fa-comments"></i>
                                         </div>
                                         <div class="content text-center">
-                                            <p>necessitatibus laborum numquam consequuntur possimus magnam expedita ipsam
-                                                illum
-                                                voluptatem quia assumenda placeat, at asperiores vitae obcaecati.
-                                                Reprehenderit
-                                                nesciunt voluptatem excepturi, libero ipsum tempora perspiciatis.</p>
+                                            <p>"I have been a customer of your metal wire business for several years now, and I must say that your products never disappoint. The wire is always of high quality and meets my specifications perfectly. Your exceptional customer service is an added bonus. Keep up the great work!"</p>
                                             <div class="person"><img alt=""
                                                     src="{{ asset('frontend/assets/images/lemonSquareRound.png') }}">
                                             </div>
@@ -133,12 +127,7 @@
                                             <i class="fa fa-comments"></i>
                                         </div>
                                         <div class="content text-center">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit reiciendis
-                                                necessitatibus laborum numquam consequuntur possimus magnam expedita ipsam
-                                                illum
-                                                voluptatem quia assumenda placeat, at asperiores vitae obcaecati.
-                                                Reprehenderit
-                                                nesciunt voluptatem excepturi, libero ipsum tempora perspiciatis.</p>
+                                            <p>I wanted to express my gratitude for the outstanding service I received from your metal wire business. Your knowledgeable staff helped me choose the right type and gauge of wire for my project, and it turned out to be the perfect fit. The quality of the wire is exceptional, and I couldn't be happier with my purchase.</p>
                                             <div class="person"><img alt=""
                                                     src="{{ asset('frontend/assets/images/oishiRound.png') }}"></div>
                                             <h5>Oishi</h5>
@@ -149,12 +138,7 @@
                                             <i class="fa fa-comments"></i>
                                         </div>
                                         <div class="content text-center">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit reiciendis
-                                                necessitatibus laborum numquam consequuntur possimus magnam expedita ipsam
-                                                illum
-                                                voluptatem quia assumenda placeat, at asperiores vitae obcaecati.
-                                                Reprehenderit
-                                                nesciunt voluptatem excepturi, libero ipsum tempora perspiciatis.</p>
+                                            <p>"I'm thoroughly impressed with the level of professionalism and expertise exhibited by your metal wire business. Your team was incredibly helpful in assisting me with my order, and the wire I received was exactly what I needed. It's clear that you take pride in your products and value your customers. Thank you for a great experience!"</p>
                                             <div class="person"><img alt=""
                                                     src="{{ asset('frontend/assets/images/saverRound.png') }}"></div>
                                             <h5>Ever Department</h5>
