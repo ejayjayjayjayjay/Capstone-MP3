@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Admin',
                 'username' => 'Admin',
                 'email' => 'admin@gmail.com',
-                'password' => Hash::make('111'),
+                'password' => Hash::make('unitopadmin'),
                 'role' => 'admin',
 
             ],
@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Agent',
                 'username' => 'Agent',
                 'email' => 'agent@gmail.com',
-                'password' => Hash::make('111'),
+                'password' => Hash::make('unitopagent'),
                 'role' => 'agent',
 
             ],
@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Agent2',
                 'username' => 'Agent',
                 'email' => 'agent2@gmail.com',
-                'password' => Hash::make('111'),
+                'password' => Hash::make('unitopagent'),
                 'role' => 'agent',
 
             ],

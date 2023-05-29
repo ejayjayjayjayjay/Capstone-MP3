@@ -68,8 +68,8 @@
                                         <div class="notify bg-light-info text-info"><i class="bx bx-home-circle"></i>
                                         </div>
                                         <div class="flex-grow-1">
-                                            <h6 class="msg-name">New Product Approved <span
-                                                    class="msg-time float-end">2 hrs ago</span></h6>
+                                            <h6 class="msg-name">New Product Approved <span class="msg-time float-end">2
+                                                    hrs ago</span></h6>
                                             <p class="msg-info">Your new product has approved</p>
                                         </div>
                                     </div>
@@ -92,8 +92,8 @@
                                                 class='bx bx-check-square'></i>
                                         </div>
                                         <div class="flex-grow-1">
-                                            <h6 class="msg-name">Your item is shipped <span
-                                                    class="msg-time float-end">5 hrs
+                                            <h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5
+                                                    hrs
                                                     ago</span></h6>
                                             <p class="msg-info">Successfully shipped your item</p>
                                         </div>
@@ -101,8 +101,7 @@
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
-                                        <div class="notify bg-light-primary text-primary"><i
-                                                class='bx bx-user-pin'></i>
+                                        <div class="notify bg-light-primary text-primary"><i class='bx bx-user-pin'></i>
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
@@ -309,8 +308,8 @@
                     <img src="{{ !empty($adminData->photo) ? url('upload/admin_images/' . $adminData->photo) : url('upload/no_image.jpg') }}"
                         class="user-img" alt="user avatar">
                     <div class="user-info ps-3">
-                        <p class="user-name mb-0">{{ Auth::user()->first_name }}</p>
-                        <p class="designattion mb-0">{{ Auth::user()->last_name }}</p>
+                        <p class="user-name mb-0">{{ Auth::user()->name }}</p>
+                        <p class="designattion mb-0">{{ Auth::user()->username }}</p>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">

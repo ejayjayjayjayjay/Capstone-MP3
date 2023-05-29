@@ -125,13 +125,10 @@
             justify-content: center;
         }
     </style>
+    <div class="text-center">
+        <h3 class="p-3 pb-0 font-weight-bold">Ordered Products</h3>
+    </div>
     <div class="d-flex align-items-center">
-        <div>
-            <h5 class="p-5 pb-2 text-align-center">Latest Orders</h5>
-        </div>
-        <div class="font-22 ms-auto">
-            <i class="bx bx-dots-horizontal-rounded"></i>
-        </div>
     </div>
     <div class="container-fluid">
         <div class="card">
@@ -166,6 +163,7 @@
                             <th>Quantity</th>
                             <th>Status</th>
                             <th>Created At</th>
+                            <th>Total Paid</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -181,18 +179,10 @@
                                 <td>{{ $order->quantity }}</td>
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->created_at }}</td>
+                                <td>{{ $order->total }}</td>
                             </tr>
                         @endforeach
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
                 </table>
                 {{ $orders->render() }}
             </div>

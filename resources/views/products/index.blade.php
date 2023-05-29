@@ -120,14 +120,12 @@
         }
     </style>
     <div class="text-center">
-        <h3 class="p-5 pb-2 font-weight-bold">Products</h3>
+        <h3 class="p-3 pb-0 font-weight-bold">Products List</h3>
     </div>
     <div class="d-flex align-items-center">
         <div class="d-flex align-items-center mb-3">
             <div class="flex-grow-5"></div>
             <a href="{{ route('products.create') }}" class="btn btn-success">Add Product</a>
-        </div>
-        <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
         </div>
     </div>
     <div class="card product-list container-fluid">
@@ -141,7 +139,7 @@
                         <th>Image</th>
                         <th>Barcode</th>
                         <th>Price</th>
-                        <th>Quantity</th>
+                        <th>Stocks</th>
                         <th>Status</th>
                         <th>Created At</th>
                         <th>Updated At</th>

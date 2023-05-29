@@ -1,10 +1,8 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="logo-icon" alt="logo icon">
-        </div>
-        <div>
-            <h4 class="logo-text">Admin</h4>
+            <img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="w-75 mx-auto d-block"
+                alt="logo icon">
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -14,7 +12,7 @@
 
         <li>
             <a href="{{ route('admin.dashboard') }}">
-                <div class="parent-icon"><i class='bx bx-cookie'></i>
+                <div class="parent-icon"><i class='bx bx-tachometer'></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
             </a>
@@ -30,7 +28,7 @@
 
         <div class="dropdown">
             <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-bs-toggle="dropdown" aria-expanded="false">
+                data-bs-toggle="dropdown" aria-expanded="false"><i class='h1 bx bx-user-plus'></i>
                 User Management
             </a>
 
@@ -43,6 +41,14 @@
         </div>
 
         <li>
+            <a href="{{ route('customeragent.index') }}">
+                <div class="parent-icon"><i class='bx bxs-user'></i>
+                </div>
+                <div class="menu-title">Customers</div>
+            </a>
+        </li>
+
+        <li>
             <a href="{{ route('orders.index') }}">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
@@ -52,21 +58,15 @@
 
         <li>
             <a href="{{ route('products.index') }}">
-                <div class="parent-icon"><i class='bx bxs-cuboid'></i>
+                <div class="parent-icon"><i class='bx bx-layer'></i>
                 </div>
                 <div class="menu-title">Products</div>
             </a>
         </li>
-        <li>
-            <a href="{{ route('customeragent.index') }}">
-                <div class="parent-icon"><i class='bx bxs-user'></i>
-                </div>
-                <div class="menu-title">Customers</div>
-            </a>
-        </li>
-        <li class="mb-5 pb-5">
+
+        <li class="mt-5">
             <a href="{{ route('admin.logout') }}">
-                <div class="parent-icon"><i class='bx bx-log-out'></i>
+                <div class="text-danger parent-icon"><i class='bx bx-log-out'></i>
                 </div>
                 <div class="menu-title">Logout</div>
             </a>

@@ -117,41 +117,34 @@
         }
     </style>
     <div class="text-center">
-        <h3 class="p-5 pb-2 font-weight-bold">Customers List</h3>
+        <h3 class="p-3 pb-0 font-weight-bold">Customers</h3>
     </div>
-    <div class="d-flex align-items-center">
-        <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
-        </div>
+    <div class="d-flex text-center">
     </div>
     <div class="card container-fluid">
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Product</th>
-                        <th>Customer</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Agent</th>
+                        <th>FULLNAME</th>
+                        <th>EMAIL</th>
+                        <th>PHONENUMBER</th>
+                        <th>ADDRESS</th>
+                        <th>DATE CREATED</th>
+                        <th>AGENT</th>
+                        <th>ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($customers as $customer)
                         <tr>
-                            <td>{{ $customer->id }}</td>
-                            <td>
-                                <img width="40px" class="img-thumbnail" src="{{ $customer->getAvatarUrl() }}"
-                                    alt="">
-                            </td>
                             <td>{{ $customer->first_name }} {{ $customer->last_name }}</td>
                             <td>{{ $customer->email }}</td>
                             <td>{{ $customer->phone }}</td>
                             <td>{{ $customer->address }}</td>
                             <td>{{ $customer->created_at }}</td>
+                            <td>{{ $customer->user_id }}</td>
                             <td>
-                                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary">
-                                    <i class='bx bxs-edit'></i>
                                 </a><button class="btn btn-danger btn-delete"
                                     data-url="{{ route('customers.destroy', $customer) }}">
                                     <i class='bx bx-trash'></i>
