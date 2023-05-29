@@ -3,7 +3,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <div class="d-flex align-items-center">
         <div>
-            <h5 class="p-5 pb-2">Admin Dashboard</h5>
+            <h5 class="p-5 pb-2">Agent Dashboard</h5>
         </div>
         <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
         </div>
