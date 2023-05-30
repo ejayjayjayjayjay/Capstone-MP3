@@ -116,11 +116,10 @@
             text-align: right;
         }
     </style>
-
+    <div class="text-center">
+        <h3 class="p-5 pb-2 font-weight-bold">Order Status</h3>
+    </div>
     <div class="d-flex align-items-center">
-        <div>
-            <h5 class="p-5 pb-2">Customers List</h5>
-        </div>
         <div class="d-flex justify-content-end align-items-end mb-3">
             <a href="{{ route('customers.create') }}" class="btn btn-success btn-add-customer">Add Customer</a>
         </div>
@@ -140,6 +139,7 @@
                         <th>Address</th>
                         <th>Created At</th>
                         <th>Actions</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -158,9 +158,10 @@
                             <td>
                                 <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary">
                                     <i class='bx bxs-edit'></i>
-                                </a><button class="btn btn-danger btn-delete"
-                                    data-url="{{ route('customers.destroy', $customer) }}">
-                                    <i class='bx bx-trash'></i>
+                            </td>
+                            <td>
+                                <a href="{{ URL::to('/customers/delete-customer/' . $customer->id) }}"
+                                    class="btn btn-danger"><i class='bx bxs-trash'></i></a>
                             </td>
                         </tr>
                     @endforeach

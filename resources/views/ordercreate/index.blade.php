@@ -56,8 +56,8 @@
         <div>
             <label for="product">Products:</label>
             <select name="product" id="product">
-                @foreach ($products as $productId => $productName)
-                    <option value="{{ $productId }}">{{ $productName }}</option>
+                @foreach ($products as $product => $productName)
+                    <option value="{{ $productName }}">{{ $productName }}</option>
                 @endforeach
             </select>
         </div>
@@ -73,12 +73,12 @@
 
         <div>
             <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" id="quantity">
+            <input type="number" name="quantity" id="quantity" required>
         </div>
 
         <div>
             <label for="total">Total:</label>
-            <input type="number" name="total" id="total">
+            <input type="number" name="total" id="total" required>
         </div>
 
         <div>

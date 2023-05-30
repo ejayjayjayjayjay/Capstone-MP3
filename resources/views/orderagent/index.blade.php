@@ -142,6 +142,7 @@
                             <th>Total</th>
                             <th>Status</th>
                             <th>Agent</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -150,7 +151,7 @@
                                 <td>{{ $order->product }}</td>
                                 <td>
                                     {{ $order->customer_id }}
-                                    @if ($order->customer)
+                                    @if ($order->customer_id)
                                         ({{ $order->customer->first_name }})
                                     @endif
                                 </td>
@@ -162,6 +163,10 @@
                                     @if ($order->users)
                                         ({{ $order->users->role }})
                                     @endif
+                                </td>
+                                <td>
+                                    <a href="{{ URL::to('/orderagent/delete-order/' . $order->id) }}"
+                                        class="btn btn-danger"><i class='bx bxs-trash'></i></a>
                                 </td>
                             </tr>
                         @endforeach

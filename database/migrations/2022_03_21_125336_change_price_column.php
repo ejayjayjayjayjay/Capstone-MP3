@@ -13,15 +13,6 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('order_items', function (Blueprint $table) {
-            $table->decimal('price', 14, 4)->change();
-        });
-        Schema::table('payments', function (Blueprint $table) {
-            $table->decimal('amount', 14, 4)->change();
-        });
-        Schema::table('products', function (Blueprint $table) {
-            $table->decimal('price', 14, 2)->change();
-        });
     }
 
     /**

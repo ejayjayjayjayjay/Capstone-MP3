@@ -32,7 +32,11 @@ class OrderCreateController extends Controller
 
         $order->save();
 
-        return redirect()->route('ordercreate.index')->with('success', 'Order created successfully!');
+        $notification = array(
+            'message' => 'Successfully Added',
+                    'alert-type' => 'success'
+        );
+        return redirect()->route('ordercreate.index')->with($notification);
     }
 
 }

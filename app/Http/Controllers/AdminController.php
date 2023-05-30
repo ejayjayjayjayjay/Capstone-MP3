@@ -104,13 +104,13 @@ class AdminController extends Controller
             /* return view('admin.all-agent'); */
             $all = DB::table('users')->get();
             return view('admin.all-agent', compact('all'));
-    
+
         }//End Method
 
         public function AddAgentIndex() {
 
             return view('admin.add_agent');
-    
+
         }//End Method
 
         public function InsertAgent(Request $request) {
@@ -123,7 +123,7 @@ class AdminController extends Controller
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
-            
+
             $insert = User::insert($data);
             if ($insert) {
                 $notification = array(
@@ -144,7 +144,7 @@ class AdminController extends Controller
 
             $edit = DB::table('users')->where('id',$id)->first();
             return view('admin.edit_agent',compact('edit'));
-    
+
         }//End Method
 
         public function UpdateAgent(Request $request,$id) {
@@ -157,11 +157,11 @@ class AdminController extends Controller
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
-            
+
             $update = DB::table('users')
                 ->where('id', $id)
                 ->update($data);
-            
+
             if ($update) {
                 $notification = array(
                     'message' => 'Successfully User Updated',
@@ -175,13 +175,13 @@ class AdminController extends Controller
                 );
                 return redirect()->route('admin.allagent')->with($notification);
             }
-    
+
         }//End Method
 
         public function DeleteAgent($id) {
 
             $delete = DB::table('users')->where('id',$id)->delete();
-            if ($delete) 
+            if ($delete)
             {
                 $notification = array(
                     'message' => 'Successfully Deleted',
@@ -189,7 +189,7 @@ class AdminController extends Controller
                 );
                 return redirect()->route('admin.allagent')->with($notification);
             }
-            else 
+            else
             {
                 $notification = array(
                     'message' => 'Something is Wrong, Please Try Again!',
@@ -197,6 +197,6 @@ class AdminController extends Controller
                 );
                 return redirect()->route('admin.allagent')->with($notification);
             }
-    
+
         }//End Method
 }

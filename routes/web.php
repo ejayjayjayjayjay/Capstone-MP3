@@ -74,8 +74,12 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('products', ProductController::class);
+    Route::get('/products/delete-product/{id}', [ProductController::class, 'DeleteProduct'])->name('admin.Deleteproduct');
     Route::resource('customeragent', CustomeragentController::class);
+    Route::get('/customeragent/delete-customer/{id}', [CustomeragentController::class, 'DeleteCustomer'])->name('admin.Deletecustomer');
     Route::resource('orders', OrderController::class);
+
+
 
 });
 //Agent Dashboard
@@ -90,7 +94,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('orderagent', OrderagentController::class);
+    Route::get('/orderagent/delete-order/{id}', [OrderagentController::class, 'DeleteOrder'])->name('admin.Deleteorder');
     Route::resource('customers', CustomerController::class);
+    Route::get('/customers/delete-customer/{id}', [CustomerController::class, 'Deletecustomer'])->name('agent.Deletecustomer');
 
 
     Route::get('/orders/create', [OrderCreateController::class, 'create'])
@@ -102,7 +108,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 Route::get('/agent/login', [AgentController::class, 'AgentLogin']);
-
 
 
 

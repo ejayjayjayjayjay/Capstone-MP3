@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductStoreRequest;
-use App\Http\Requests\ProductUpdateRequest;
-use App\Http\Resources\ProductResource;
+use view;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Resources\ProductResource;
 use Illuminate\Support\Facades\Storage;
-use view;
+use App\Http\Requests\ProductStoreRequest;
+use App\Http\Requests\ProductUpdateRequest;
 
 class ProductController extends Controller
 {
@@ -120,22 +121,26 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Success, Product has been updated.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Product $product)
-    {
-        if ($product->image) {
-            Storage::delete($product->image);
-        }
-        $product->delete();
+    public function DeleteProduct($id) {
 
-        return response()->json([
-            'success' => true
-        ]);
-    }
+            $delete = DB::table('products')->where('id',$id)->delete();
+            if ($delete)
+            {
+                $notification = array(
+                    'message' => 'Successfully Deleted',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('products.index')->with($notification);
+            }
+            else
+            {
+                $notification = array(
+                    'message' => 'Something is Wrong, Please Try Again!',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('products.index')->with($notification);
+            }
+
+        }//End Method
 
 }

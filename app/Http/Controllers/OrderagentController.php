@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\OrderStoreRequest;
 
 class OrderagentController extends Controller
@@ -28,17 +29,13 @@ class OrderagentController extends Controller
             $orders = $orders->where('created_at', '<=', $request->end_date . ' 23:59:59');
         }
 
-        $orders = $orders->with(['items', 'payments', 'customer'])->latest()->paginate(10);
+        $orders = $orders->with(['customer'])->latest()->paginate(10);
 
         $total = $orders->map(function ($i) {
             return $i->total();
         })->sum();
 
-        $receivedAmount = $orders->map(function ($i) {
-            return $i->receivedAmount();
-        })->sum();
-
-        return view('orderagent.index', compact('orders', 'total', 'receivedAmount'));
+        return view('orderagent.index', compact('orders'));
     }
 
     public function store(OrderStoreRequest $request)
@@ -47,7 +44,7 @@ class OrderagentController extends Controller
 
         $order = Order::create([
             'user_id' => $user->id,
-            'customer' => $request->customer,
+            'customer_id' => $request->customer_id,
             'total' => $request->total,
             'received' => $request->received,
             'status' => $request->status,
@@ -76,5 +73,27 @@ class OrderagentController extends Controller
 
         return 'success';
     }
+
+    public function DeleteOrder($id) {
+
+            $delete = DB::table('orders')->where('id',$id)->delete();
+            if ($delete)
+            {
+                $notification = array(
+                    'message' => 'Successfully Deleted',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('orderagent.index')->with($notification);
+            }
+            else
+            {
+                $notification = array(
+                    'message' => 'Something is Wrong, Please Try Again!',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('orderagent.index')->with($notification);
+            }
+
+        }//End Method
 
 }

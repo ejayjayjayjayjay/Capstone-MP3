@@ -136,19 +136,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($customers as $customer)
+                    @foreach ($customers as $customer => $row)
                         <tr>
-                            <td>{{ $customer->first_name }} {{ $customer->last_name }}</td>
-                            <td>{{ $customer->email }}</td>
-                            <td>{{ $customer->phone }}</td>
-                            <td>{{ $customer->address }}</td>
-                            <td>{{ $customer->created_at }}</td>
-                            <td>{{ $customer->user_id }}</td>
+                            <td>{{ $row->first_name }}</td>
+                            <td>{{ $row->email }}</td>
+                            <td>{{ $row->phone }}</td>
+                            <td>{{ $row->address }}</td>
+                            <td>{{ $row->created_at }}</td>
+                            <td>{{ $row->user_id }}</td>
+
                             <td>
-                                </a><button class="btn btn-danger btn-delete"
-                                    data-url="{{ route('customers.destroy', $customer) }}">
-                                    <i class='bx bx-trash'></i>
+                                <a href="{{ URL::to('/customeragent/delete-customer/' . $row->id) }}"
+                                    class="btn btn-sm btn-danger">Delete</a>
                             </td>
+
                         </tr>
                     @endforeach
                 </tbody>
@@ -156,43 +157,4 @@
             {{ $customers->render() }}
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $(document).on('click', '.btn-delete', function() {
-                $this = $(this);
-                const swalWithBootstrapButtons = Swal.mixin({
-                    customClass: {
-                        confirmButton: 'btn btn-success',
-                        cancelButton: 'btn btn-danger'
-                    },
-                    buttonsStyling: false
-                })
-
-                swalWithBootstrapButtons.fire({
-                    title: 'Are you sure?',
-                    text: "Do you really want to delete this customer?",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes, delete it!',
-                    cancelButtonText: 'No',
-                    reverseButtons: true
-                }).then((result) => {
-                    if (result.value) {
-                        $.post($this.data('url'), {
-                            _method: 'DELETE',
-                            _token: '{{ csrf_token() }}'
-                        }, function(res) {
-                            $this.closest('tr').fadeOut(500, function() {
-                                $(this).remove();
-                            })
-                        })
-                    }
-                })
-            })
-        })
-    </script>
 @endsection

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CustomerStoreRequest;
 
@@ -83,16 +85,31 @@ class CustomeragentController extends Controller
         return redirect()->route('customeragent.index')->with('success', 'Success, The customer has been updated.');
     }
 
-    public function destroy(Customer $customer)
-    {
-        if ($customer->avatar) {
-            Storage::delete($customer->avatar);
-        }
+    /**
+     * Summary of DeleteCustomer
+     * @param mixed $id
+     * @return RedirectResponse
+     */
+    public function DeleteCustomer($id) {
 
-        $customer->delete();
+            $delete = DB::table('customers')->where('id',$id)->delete();
+            if ($delete)
+            {
+                $notification = array(
+                    'message' => 'Successfully Deleted',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('customeragent.index')->with($notification);
+            }
+            else
+            {
+                $notification = array(
+                    'message' => 'Something is Wrong, Please Try Again!',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('customeragent.index')->with($notification);
+            }
 
-       return response()->json([
-           'success' => true
-       ]);
-    }
+        }//End Method
+
 }

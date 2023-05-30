@@ -133,8 +133,6 @@
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
-
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Image</th>
                         <th>Barcode</th>
@@ -148,30 +146,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($products as $product)
+                    @foreach ($products as $product => $row)
                         <tr>
-                            <td>{{ $product->id }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td><img class="product-img img-thumbnail" src="{{ Storage::url($product->image) }}"
-                                    alt=""></td>
-                            <td>{{ $product->barcode }}</td>
-                            <td>{{ config('settings.currency_symbol') }}{{ $product->price }}</td>
-                            <td>{{ $product->quantity }}</td>
+                            <td>{{ $row->name }}</td>
+                            <td><img class="product-img img-thumbnail" src="{{ Storage::url($row->image) }}" alt="">
+                            </td>
+                            <td>{{ $row->barcode }}</td>
+                            <td>{{ config('settings.currency_symbol') }}{{ $row->price }}</td>
+                            <td>{{ $row->quantity }}</td>
                             <td>
                                 <span
-                                    class="right badge badge-{{ $product->status ? 'success' : 'danger' }}">{{ $product->status ? 'Active' : 'Inactive' }}</span>
+                                    class="right badge badge-{{ $row->status ? 'success' : 'danger' }}">{{ $row->status ? 'Active' : 'Inactive' }}</span>
                             </td>
-                            <td>{{ $product->created_at }}</td>
-                            <td>{{ $product->updated_at }}</td>
+                            <td>{{ $row->created_at }}</td>
+                            <td>{{ $row->updated_at }}</td>
                             <td>
-                                <a href="{{ route('products.edit', $product) }}" class="btn btn-primary">
+                                <a href="{{ route('products.edit', $row) }}" class="btn btn-primary">
                                     <i class='bx bxs-edit'></i>
                                 </a>
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-delete"
-                                    data-url="{{ route('products.destroy', $product) }}"><i
-                                        class="bx bxs-trash"></i></button>
+                                <a href="{{ URL::to('/products/delete-product/' . $row->id) }}" class="btn btn-danger"><i
+                                        class='bx bxs-trash'></i></a>
                             </td>
                         </tr>
                     @endforeach
@@ -180,43 +176,4 @@
             {{ $products->render() }}
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $(document).on('click', '.btn-delete', function() {
-                $this = $(this);
-                const swalWithBootstrapButtons = Swal.mixin({
-                    customClass: {
-                        confirmButton: 'btn btn-success',
-                        cancelButton: 'btn btn-danger'
-                    },
-                    buttonsStyling: false
-                })
-
-                swalWithBootstrapButtons.fire({
-                    title: 'Are you sure?',
-                    text: "Do you really want to delete this product?",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes, delete it!',
-                    cancelButtonText: 'No',
-                    reverseButtons: true
-                }).then((result) => {
-                    if (result.value) {
-                        $.post($this.data('url'), {
-                            _method: 'DELETE',
-                            _token: '{{ csrf_token() }}'
-                        }, function(res) {
-                            $this.closest('tr').fadeOut(500, function() {
-                                $(this).remove();
-                            })
-                        })
-                    }
-                })
-            })
-        })
-    </script>
 @endsection

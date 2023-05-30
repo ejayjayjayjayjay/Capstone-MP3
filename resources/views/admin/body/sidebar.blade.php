@@ -28,7 +28,7 @@
 
         <div class="dropdown">
             <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class='h1 bx bx-user-plus'></i>
+                data-bs-toggle="dropdown" aria-expanded="false"><i class='bx bxs-user-detail'></i>
                 User Management
             </a>
 

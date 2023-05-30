@@ -28,7 +28,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Orders</p>
-                            <p class="mb-0 ms-auto">+4.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Products</p>
-                            <p class="mb-0 ms-auto">+1.2%<span><i class='bx bx-coffee-bean'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-coffee-bean'></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Visitors</p>
-                            <p class="mb-0 ms-auto">+5.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Customers</p>
-                            <p class="mb-0 ms-auto">+5.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
                         </div>
                     </div>
                 </div>

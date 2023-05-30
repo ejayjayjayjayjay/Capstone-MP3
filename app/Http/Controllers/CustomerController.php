@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CustomerStoreRequest;
-use App\Models\Customer;
 use App\Models\Product;
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\CustomerStoreRequest;
 
 class CustomerController extends Controller
 {
@@ -85,16 +86,25 @@ class CustomerController extends Controller
         return redirect()->route('customers.index')->with('success', 'Success, The customer has been updated.');
     }
 
-    public function destroy(Customer $customer)
-    {
-        if ($customer->avatar) {
-            Storage::delete($customer->avatar);
-        }
+    public function DeleteCustomer($id) {
 
-        $customer->delete();
+            $delete = DB::table('customers')->where('id',$id)->delete();
+            if ($delete)
+            {
+                $notification = array(
+                    'message' => 'Successfully Deleted',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('customers.index')->with($notification);
+            }
+            else
+            {
+                $notification = array(
+                    'message' => 'Something is Wrong, Please Try Again!',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('customers.index')->with($notification);
+            }
 
-       return response()->json([
-           'success' => true
-       ]);
-    }
+        }//End Method
 }

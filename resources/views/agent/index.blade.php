@@ -1,10 +1,10 @@
 @extends('agent.agent_dashboard')
 @section('agent')
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <div class="text-center">
+        <h3 class="p-3 pb-0 font-weight-bold">Admin Analytics</h3>
+    </div>
     <div class="d-flex align-items-center">
-        <div>
-            <h5 class="p-5 pb-2">Agent Dashboard</h5>
-        </div>
         <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
         </div>
     </div>
