@@ -26,6 +26,14 @@
             </a>
         </li>
 
+        <li>
+            <a href="{{ route('chatify') }}">
+                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
+                </div>
+                <div class="menu-title">Message</div>
+            </a>
+        </li>
+
         <div class="dropdown">
             <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-bs-toggle="dropdown" aria-expanded="false"><i class='bx bxs-user-detail'></i>
