@@ -27,7 +27,7 @@
         </li>
 
         <li>
-            <a href="{{ route('chatify') }}">
+            <a href="{{ route('agent.Chatagent') }}">
                 <div class="parent-icon"><i class='bx bxs-user-detail'></i>
                 </div>
                 <div class="menu-title">Message</div>
