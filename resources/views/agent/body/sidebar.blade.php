@@ -27,6 +27,14 @@
         </li>
 
         <li>
+            <a href="{{ route('chatify') }}">
+                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
+                </div>
+                <div class="menu-title">Message</div>
+            </a>
+        </li>
+
+        <li>
             <a href="{{ route('orderagent.index') }}">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>

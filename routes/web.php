@@ -72,6 +72,11 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/delete-agent/{id}', [AdminController::class, 'DeleteAgent'])->name('admin.Deleteagent');
     // Agent Management End
 
+    // Chatify Route Start
+    Route::get('/admin/chat-agent', [AdminController::class, 'ChatAgent'])->name('admin.Chatagent');
+    Route::get('/agent/chat-agent', [AgentController::class, 'ChatAgent'])->name('agent.Chatagent');
+    //Chatify Route End
+
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('products', ProductController::class);
     Route::get('/products/delete-product/{id}', [ProductController::class, 'DeleteProduct'])->name('admin.Deleteproduct');
