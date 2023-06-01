@@ -164,6 +164,7 @@
                             <th>Status</th>
                             <th>Created At</th>
                             <th>Total Paid</th>
+                            <th>Total Bought</th>
                         </tr>
                     </thead>
                     <tbody>

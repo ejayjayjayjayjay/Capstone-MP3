@@ -117,7 +117,7 @@
         }
     </style>
     <div class="text-center">
-        <h3 class="p-5 pb-2 font-weight-bold">Order Status</h3>
+        <h3 class="p-5 pb-2 font-weight-bold">Add Customer</h3>
     </div>
     <div class="d-flex align-items-center">
         <div class="d-flex justify-content-end align-items-end mb-3">

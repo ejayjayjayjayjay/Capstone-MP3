@@ -140,6 +140,7 @@
                             <th>Customer</th>
                             <th>Quantity</th>
                             <th>Total</th>
+                            <th>Payment</th>
                             <th>Status</th>
                             <th>Agent</th>
                             <th>Action</th>
@@ -158,6 +159,7 @@
                                 <td>{{ $order->quantity }}</td>
                                 <td>{{ $order->total }}</td>
                                 <td>{{ $order->status }}</td>
+                                <td>{{ $order->order_status }}</td>
                                 <td>
                                     {{ $order->user_id }}
                                     @if ($order->users)

@@ -1,10 +1,8 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="logo-icon" alt="logo icon">
-        </div>
-        <div>
-            <h4 class="logo-text">Agent</h4>
+            <img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="w-75 mx-auto d-block"
+                alt="logo icon">
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -53,7 +51,7 @@
         </li>
 
         <li class="mb-5 pb-5">
-            <a href="{{ route('admin.logout') }}">
+            <a href="{{ route('agent.logout') }}">
                 <div class="parent-icon"><i class='bx bx-log-out'></i>
                 </div>
                 <div class="menu-title">Logout</div>
