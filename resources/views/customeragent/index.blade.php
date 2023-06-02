@@ -145,6 +145,8 @@
                             <td>{{ $row->created_at }}</td>
                             <td>{{ $row->user_id }}</td>
 
+
+
                             <td>
                                 <a href="{{ URL::to('/customeragent/delete-customer/' . $row->id) }}"
                                     class="btn btn-sm btn-danger">Delete</a>

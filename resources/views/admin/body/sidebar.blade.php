@@ -20,7 +20,7 @@
 
         <li>
             <a href="{{ route('admin.profile') }}">
-                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
+                <div class="parent-icon"><i class='bx bxs-user-circle'></i>
                 </div>
                 <div class="menu-title">Profile</div>
             </a>
@@ -28,7 +28,7 @@
 
         <li>
             <a href="{{ route('admin.Chatagent') }}">
-                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
+                <div class="parent-icon"><i class='bx bxs-message-dots'></i>
                 </div>
                 <div class="menu-title">Message</div>
             </a>
@@ -36,7 +36,7 @@
 
         <div class="dropdown">
             <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class='bx bxs-user-detail'></i>
+                data-bs-toggle="dropdown" aria-expanded="false"><i class='bx bxs-user'></i>
                 User Management
             </a>
 
@@ -50,7 +50,7 @@
 
         <li>
             <a href="{{ route('customeragent.index') }}">
-                <div class="parent-icon"><i class='bx bxs-user'></i>
+                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
                 </div>
                 <div class="menu-title">Customers</div>
             </a>
@@ -58,7 +58,7 @@
 
         <li>
             <a href="{{ route('orders.index') }}">
-                <div class="parent-icon"><i class='bx bx-cart'></i>
+                <div class="parent-icon"><i class='bx bxs-cart-alt'></i>
                 </div>
                 <div class="menu-title">Orders</div>
             </a>
@@ -66,7 +66,7 @@
 
         <li>
             <a href="{{ route('products.index') }}">
-                <div class="parent-icon"><i class='bx bx-layer'></i>
+                <div class="parent-icon"><i class='bx bxl-product-hunt'></i>
                 </div>
                 <div class="menu-title">Products</div>
             </a>

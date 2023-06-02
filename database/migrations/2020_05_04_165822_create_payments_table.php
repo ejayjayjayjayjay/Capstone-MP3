@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('agent_id');
-            $table->string('paid_amount');
+            $table->string('items');
+            $table->string('payments');
             $table->timestamps();
         });
     }

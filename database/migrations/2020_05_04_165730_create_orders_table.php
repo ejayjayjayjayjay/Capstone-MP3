@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('total');
             $table->enum('status', ['Paid', 'Not Paid'])->default('Paid');
-            $table->enum('order_status', ['For Delivery', 'Cancelled'])->default('Pending');
             $table->foreignId('user_id');
             $table->timestamps();
 
