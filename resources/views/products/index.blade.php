@@ -133,6 +133,7 @@
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
+                        <th>Product#</th>
                         <th>Name</th>
                         <th>Image</th>
                         <th>Barcode</th>
@@ -148,6 +149,7 @@
                 <tbody>
                     @foreach ($products as $product => $row)
                         <tr>
+                            <td>{{ $row->id }}</td>
                             <td>{{ $row->name }}</td>
                             <td><img class="product-img img-thumbnail" src="{{ Storage::url($row->image) }}" alt="">
                             </td>

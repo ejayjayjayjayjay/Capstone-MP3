@@ -80,7 +80,7 @@ class OrderagentController extends Controller
             if ($delete)
             {
                 $notification = array(
-                    'message' => 'Successfully Deleted',
+                    'message' => 'Order Has Been Canceled',
                     'alert-type' => 'success'
                 );
                 return redirect()->route('orderagent.index')->with($notification);

@@ -3,9 +3,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\OrderStoreRequest;
 use App\Models\Order;
+use App\Models\Payment;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\OrderStoreRequest;
 
 class OrderController extends Controller
 {
@@ -46,4 +48,7 @@ class OrderController extends Controller
         ]);
         return 'success';
     }
+
+    // Controller action for handling the form submission
+
 }

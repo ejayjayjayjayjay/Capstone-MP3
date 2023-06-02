@@ -34,29 +34,38 @@ class OrderCreateController extends Controller
 
 
     public function store(Request $request)
-{
-    $order = new Order();
-    $order->product = $request->input('product');
-    $order->customer_id = $request->input('customer_id');
-    $order->quantity = $request->input('quantity');
-    $order->total = $request->input('total');
-    $order->status = $request->input('status');
-    $order->user_id = $request->input('user_id');
+    {
+        $order = new Order();
+        $order->product = $request->input('product');
+        $order->customer_id = $request->input('customer_id');
+        $order->quantity = $request->input('quantity');
+        $order->total = $request->input('total');
+        $order->status = $request->input('status');
+        $order->user_id = $request->input('user_id');
 
-    $product = Product::where('name', $order->product)->first(); // Assuming 'name' is the column representing the product name in the 'products' table
+        $product = Product::where('name', $order->product)->first(); // Assuming 'name' is the column representing the product name in the 'products' table
 
-    if ($product) {
-        $product->quantity -= $order->quantity;
-        $product->save();
+        if ($product) {
+            if ($product->quantity < $order->quantity) {
+                $notification = array(
+                    'message' => 'Product is out of stock',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('ordercreate.index')->with($notification);
+            }
+
+            $product->quantity -= $order->quantity;
+            $product->save();
+        }
+
+        $order->save();
+
+        $notification = array(
+            'message' => 'Successfully Added',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('ordercreate.index')->with($notification);
     }
 
-    $order->save();
-
-    $notification = array(
-        'message' => 'Successfully Added',
-        'alert-type' => 'success'
-    );
-    return redirect()->route('ordercreate.index')->with($notification);
-}
 
 }

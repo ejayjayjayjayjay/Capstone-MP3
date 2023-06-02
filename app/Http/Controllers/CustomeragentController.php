@@ -112,6 +112,10 @@ class CustomeragentController extends Controller
 
         }//End Method
 
+    /**
+     * Summary of user
+     * @return mixed
+     */
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

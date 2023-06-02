@@ -158,18 +158,19 @@
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Product</th>
+                            <th>Order#</th>
+                            <th>Product Name</th>
                             <th>Customer</th>
                             <th>Quantity</th>
                             <th>Status</th>
                             <th>Created At</th>
                             <th>Total Paid</th>
-                            <th>Total Bought</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($orders as $order)
                             <tr>
+                                <td>{{ $order->id }}</td>
                                 <td>{{ $order->product }}</td>
                                 <td>
                                     {{ $order->customer_id }}

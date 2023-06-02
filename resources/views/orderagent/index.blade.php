@@ -166,9 +166,9 @@
                                         ({{ $order->users->role }})
                                     @endif
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     <a href="{{ URL::to('/orderagent/delete-order/' . $order->id) }}"
-                                        class="btn btn-danger"><i class='bx bxs-trash'></i></a>
+                                        class="btn btn-danger">Cancel Order</a>
                                 </td>
                             </tr>
                         @endforeach

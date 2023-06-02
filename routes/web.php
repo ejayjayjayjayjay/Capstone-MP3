@@ -77,7 +77,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/agent/chat-agent', [AgentController::class, 'ChatAgent'])->name('agent.Chatagent');
     //Chatify Route End
 
-    Route::get('/', [HomeController::class, 'index'])->name('index');
+
     Route::resource('products', ProductController::class);
     Route::get('/products/delete-product/{id}', [ProductController::class, 'DeleteProduct'])->name('admin.Deleteproduct');
     Route::resource('customeragent', CustomeragentController::class);
@@ -97,7 +97,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/agent/change/password', [AgentController::class, 'AgentChangePassword'])->name('agent.change.password');
     Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 
-    Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('orderagent', OrderagentController::class);
     Route::get('/orderagent/delete-order/{id}', [OrderagentController::class, 'DeleteOrder'])->name('admin.Deleteorder');
     Route::resource('customers', CustomerController::class);

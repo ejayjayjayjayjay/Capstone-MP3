@@ -234,7 +234,7 @@
                     </div>
 
                     @if (Auth::check())
-                        <div>
+                        <div class="pb-3">
                             <label for="user_id">Agent:</label>
                             <select name="user_id" id="user_id">
                                 <option value="{{ Auth::user()->id }}">{{ Auth::user()->name }}</option>
