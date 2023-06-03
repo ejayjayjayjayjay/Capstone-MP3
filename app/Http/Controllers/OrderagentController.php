@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -21,6 +22,7 @@ class OrderagentController extends Controller
     {
         $user = $request->user(); // Get the logged-in user
         $orders = Order::where('user_id', $user->id); // Filter orders by user_id
+        $users = User::all();
 
         if ($request->start_date) {
             $orders = $orders->where('created_at', '>=', $request->start_date);
@@ -35,7 +37,7 @@ class OrderagentController extends Controller
             return $i->total();
         })->sum();
 
-        return view('orderagent.index', compact('orders'));
+        return view('orderagent.index', compact('orders','users'));
     }
 
     public function store(OrderStoreRequest $request)
@@ -43,7 +45,7 @@ class OrderagentController extends Controller
         $user = $request->user(); // Get the logged-in user
 
         $order = Order::create([
-            'user_id' => $user->id,
+            'user_id' => $request->user_id,
             'customer_id' => $request->customer_id,
             'total' => $request->total,
             'received' => $request->received,
@@ -95,5 +97,10 @@ class OrderagentController extends Controller
             }
 
         }//End Method
+
+        public function user()
+        {
+            return $this->belongsTo(User::class);
+        }
 
 }

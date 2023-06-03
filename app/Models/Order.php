@@ -34,6 +34,11 @@ class Order extends Model
         return 'Working Customer';
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function total()
     {
         return $this->items->map(function ($i){

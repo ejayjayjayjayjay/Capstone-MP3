@@ -27,7 +27,6 @@ return new class extends Migration
 
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('set null');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('payment_id')->references('id')->on('payments')->onDelete('cascade');
         });
     }
 

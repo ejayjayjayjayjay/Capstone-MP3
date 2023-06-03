@@ -160,12 +160,7 @@
                                 <td>{{ $order->total }}</td>
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->order_status }}</td>
-                                <td>
-                                    {{ $order->user_id }}
-                                    @if ($order->users)
-                                        ({{ $order->users->role }})
-                                    @endif
-                                </td>
+                                <td>{{ $order->user->name }}</td>
                                 <td class="text-center">
                                     <a href="{{ URL::to('/orderagent/delete-order/' . $order->id) }}"
                                         class="btn btn-danger">Cancel Order</a>

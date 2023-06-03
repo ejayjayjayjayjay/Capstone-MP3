@@ -162,6 +162,7 @@
                             <th>Product Name</th>
                             <th>Customer</th>
                             <th>Quantity</th>
+                            <th>Payment</th>
                             <th>Status</th>
                             <th>Created At</th>
                             <th>Total Paid</th>
@@ -180,6 +181,7 @@
                                 </td>
                                 <td>{{ $order->quantity }}</td>
                                 <td>{{ $order->status }}</td>
+                                <td>{{ $order->order_status }}</td>
                                 <td>{{ $order->created_at }}</td>
                                 <td>{{ $order->total }}</td>
                             </tr>
