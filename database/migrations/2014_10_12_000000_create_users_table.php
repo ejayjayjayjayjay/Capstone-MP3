@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->enum('role',['admin','agent'])->default('admin');
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->integer('total_agentCommission');
             $table->rememberToken();
             $table->timestamps();
         });

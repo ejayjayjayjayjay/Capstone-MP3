@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('items');
             $table->string('payments');
+            $table->integer('total_profit');
             $table->timestamps();
         });
     }

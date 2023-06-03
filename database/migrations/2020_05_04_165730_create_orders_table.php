@@ -20,14 +20,17 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('total');
             $table->enum('status', ['Paid', 'Not Paid'])->default('Paid');
-            $table->enum('order_status', ['Pending', 'Cancelled','For Delivery','Delivered'])->default('Pending');
+            $table->enum('order_status', ['Pending', 'Cancelled', 'For Delivery', 'Delivered'])->default('Pending');
             $table->foreignId('user_id');
+            $table->foreignId('payment_id');
             $table->timestamps();
 
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('set null');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('payment_id')->references('id')->on('payments')->onDelete('cascade');
         });
     }
+
 
     /**
      * Reverse the migrations.
