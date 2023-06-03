@@ -5,7 +5,7 @@
 
 @section('admin')
 
-    <div class="card">
+    <div class="card container-fluid">
         <div class="card-body">
 
             <form action="{{ route('products.update', $product) }}" method="POST" enctype="multipart/form-data">
@@ -97,6 +97,9 @@
                 </div>
 
                 <button class="btn btn-success btn-block btn-lg" type="submit">Save Changes</button>
+                <a href="{{ route('products.index') }}">
+                    <button class="btn btn-danger btn-block btn-lg" type="cancel" href="">Cancel</button>
+                </a>
             </form>
         </div>
     </div>

@@ -251,8 +251,8 @@
                 <h3 class="p-5 pb-2 font-weight-bold">Products</h3>
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
-                        <tr>
-                            <th>Product#</th>
+                        <tr class="text-center">
+                            <th>Product No.</th>
                             <th>Name</th>
                             <th>Description</th>
                             <th>Price</th>
@@ -261,7 +261,7 @@
                     </thead>
                     <tbody>
                         @foreach ($products as $productId => $productName)
-                            <tr>
+                            <tr class="text-center fw-bold">
                                 <td>{{ $products[$productId]->id }}</td>
                                 <td>{{ $products[$productId]->name }}</td>
                                 <td><button class="button-54">{{ $products[$productId]->description }}</button></td>

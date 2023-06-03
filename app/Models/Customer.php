@@ -21,4 +21,9 @@ class Customer extends Model
     {
         return Storage::url($this->avatar);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

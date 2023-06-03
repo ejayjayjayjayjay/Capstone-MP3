@@ -132,8 +132,8 @@
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
-                    <tr>
-                        <th>Product#</th>
+                    <tr class="text-center">
+                        <th>Product No.</th>
                         <th>Name</th>
                         <th>Image</th>
                         <th>Barcode</th>
@@ -148,7 +148,7 @@
                 </thead>
                 <tbody>
                     @foreach ($products as $product => $row)
-                        <tr>
+                        <tr class="fw-bold text-center">
                             <td>{{ $row->id }}</td>
                             <td>{{ $row->name }}</td>
                             <td><img class="product-img img-thumbnail" src="{{ Storage::url($row->image) }}" alt="">

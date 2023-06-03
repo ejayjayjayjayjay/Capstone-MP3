@@ -130,7 +130,7 @@
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
-                    <tr>
+                    <tr class="text-center">
                         <th>ID</th>
                         <th>Avatar</th>
                         <th>Name</th>
@@ -144,7 +144,7 @@
                 </thead>
                 <tbody>
                     @foreach ($customers as $customer)
-                        <tr>
+                        <tr class="text-center fw-bold">
                             <td>{{ $customer->id }}</td>
                             <td>
                                 <img width="40px" class="img-thumbnail" src="{{ $customer->getAvatarUrl() }}"

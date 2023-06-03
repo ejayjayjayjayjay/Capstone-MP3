@@ -135,7 +135,7 @@
                 <hr>
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
-                        <tr>
+                        <tr class="text-center">
                             <th>Product</th>
                             <th>Customer</th>
                             <th>Quantity</th>
@@ -148,7 +148,7 @@
                     </thead>
                     <tbody>
                         @foreach ($orders as $order)
-                            <tr>
+                            <tr class="text-center fw-bold">
                                 <td>{{ $order->product }}</td>
                                 <td>
                                     {{ $order->customer_id }}

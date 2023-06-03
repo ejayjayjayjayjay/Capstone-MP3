@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,13 +15,18 @@ class CustomeragentController extends Controller
      public function index()
     {
         if (request()->wantsJson()) {
-            return response(
-                Customer::all()
-            );
+            $customers = Customer::all();
+            $users = User::all();
+            return response()->json([
+                'customers' => $customers,
+                'users' => $users
+            ]);
         }
+
         $customers = Customer::latest()->paginate(10);
         return view('customeragent.index')->with('customers', $customers);
     }
+
 
     public function create()
     {
@@ -116,10 +122,5 @@ class CustomeragentController extends Controller
      * Summary of user
      * @return mixed
      */
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
-
 
 }

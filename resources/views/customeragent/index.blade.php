@@ -125,33 +125,30 @@
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
-                    <tr>
+                    <tr class="text-center">
                         <th>FULLNAME</th>
                         <th>EMAIL</th>
                         <th>PHONENUMBER</th>
                         <th>ADDRESS</th>
                         <th>DATE CREATED</th>
-                        <th>AGENT</th>
-                        <th>ACTION</th>
+                        <th>AGENT NAME</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($customers as $customer => $row)
-                        <tr>
+                        <tr class="fw-bold text-center">
                             <td>{{ $row->first_name }}</td>
                             <td>{{ $row->email }}</td>
                             <td>{{ $row->phone }}</td>
                             <td>{{ $row->address }}</td>
                             <td>{{ $row->created_at }}</td>
-                            <td>{{ $row->user_id }}</td>
-
-
-
+                            <td>{{ $row->user->name }}</td>
                             <td>
                                 <a href="{{ URL::to('/customeragent/delete-customer/' . $row->id) }}"
                                     class="btn btn-sm btn-danger">Delete</a>
                             </td>
-
                         </tr>
                     @endforeach
                 </tbody>

@@ -157,33 +157,32 @@
                 <hr>
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
-                        <tr>
-                            <th>Order#</th>
+                        <tr class="text-center">
+                            <th>Order No.</th>
                             <th>Product Name</th>
                             <th>Customer</th>
                             <th>Quantity</th>
                             <th>Payment</th>
                             <th>Status</th>
-                            <th>Created At</th>
+                            <th>Date</th>
                             <th>Total Paid</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($orders as $order)
-                            <tr>
+                            <tr class="fw-bold text-center">
                                 <td>{{ $order->id }}</td>
                                 <td>{{ $order->product }}</td>
-                                <td>
-                                    {{ $order->customer_id }}
-                                    @if ($order->customer)
-                                        ({{ $order->customer->first_name }})
-                                    @endif
-                                </td>
+                                <td>{{ $order->customer->first_name }}</td>
                                 <td>{{ $order->quantity }}</td>
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->order_status }}</td>
                                 <td>{{ $order->created_at }}</td>
                                 <td>{{ $order->total }}</td>
+                                <td>
+                                    <a href="{{ URL::to('/orders/delete-order/' . $order->id) }}"
+                                        class="btn btn-danger">Delete</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

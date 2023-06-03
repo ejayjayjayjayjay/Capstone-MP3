@@ -84,8 +84,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/customeragent/delete-customer/{id}', [CustomeragentController::class, 'DeleteCustomer'])->name('admin.Deletecustomer');
     Route::resource('orders', OrderController::class);
 
-
-
 });
 //Agent Dashboard
 
