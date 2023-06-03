@@ -25,7 +25,7 @@ class OrderCreateController extends Controller
 
     public function create()
     {
-        $products = Product::select('name', 'description', 'quantity', 'price')->get();
+        $products = Product::select('id','name', 'description', 'quantity', 'price')->get();
         $customers = Customer::pluck('first_name', 'id');
         $users = User::pluck('name', 'id');
 

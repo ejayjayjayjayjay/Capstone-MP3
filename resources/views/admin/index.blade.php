@@ -126,7 +126,7 @@
                     </div>
                     <div class="d-flex align-items-center text-white">
                         <p class="mb-0">Total Revenue</p>
-                        <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
+                        <p class="mb-0 ms-auto"><span><i class='bx bxs-wallet'></i></span></p>
                     </div>
                 </div>
             </div>

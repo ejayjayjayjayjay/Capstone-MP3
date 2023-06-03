@@ -252,6 +252,7 @@
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
                         <tr>
+                            <th>Product#</th>
                             <th>Name</th>
                             <th>Description</th>
                             <th>Price</th>
@@ -261,9 +262,10 @@
                     <tbody>
                         @foreach ($products as $productId => $productName)
                             <tr>
+                                <td>{{ $products[$productId]->id }}</td>
                                 <td>{{ $products[$productId]->name }}</td>
                                 <td><button class="button-54">{{ $products[$productId]->description }}</button></td>
-                                <td>{{ $products[$productId]->price }}</td>
+                                <td>₱ {{ $products[$productId]->price }}</td>
                                 <td>{{ $products[$productId]->quantity }}</td>
                             </tr>
                         @endforeach

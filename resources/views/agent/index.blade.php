@@ -29,7 +29,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Orders</p>
-                            <p class="mb-0 ms-auto">+4.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Products</p>
-                            <p class="mb-0 ms-auto">+1.2%<span><i class='bx bx-coffee-bean'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-coffee-bean'></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Visitors</p>
-                            <p class="mb-0 ms-auto">+5.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                             ?>
                             <h5 class="mb-0 text-white">{{ $rows }}</h5>
                             <div class="ms-auto">
-                                <i class='h1 bx bxs-user'></i>
+                                <i class='h1 bx bxs-user-account'></i>
                             </div>
                         </div>
                         <div class="progress my-3 bg-light-transparent" style="height:3px;">
@@ -102,7 +102,7 @@
                         </div>
                         <div class="d-flex align-items-center text-white">
                             <p class="mb-0">Total Customers</p>
-                            <p class="mb-0 ms-auto">+5.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
+                            <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                         ?>
                         <h5 class="mb-0 text-white">{{ $rows }}</h5>
                         <div class="ms-auto">
-                            <i class='h1 bx bxs-user'></i>
+                            <i class='h1 bx bxs-dollar-circle'></i>
                         </div>
                     </div>
                     <div class="progress my-3 bg-light-transparent" style="height:3px;">
