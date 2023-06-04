@@ -136,7 +136,7 @@
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
                         <tr class="text-center">
-                            <th>Product No.</th>
+                            <th>No.</th>
                             <th>Product</th>
                             <th>Customer</th>
                             <th>Quantity</th>
@@ -145,6 +145,7 @@
                             <th>Status</th>
                             <th>Agent</th>
                             <th>Action</th>
+                            <th>Invoice</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -153,10 +154,7 @@
                                 <td>{{ $order->id }}</td>
                                 <td>{{ $order->product }}</td>
                                 <td>
-                                    {{ $order->customer_id }}
-                                    @if ($order->customer_id)
-                                        ({{ $order->customer->first_name }})
-                                    @endif
+                                    {{ $order->customer->first_name }}
                                 </td>
                                 <td>{{ $order->quantity }}</td>
                                 <td>{{ $order->total }}</td>
@@ -166,6 +164,11 @@
                                 <td class="text-center">
                                     <a href="{{ URL::to('/orderagent/delete-order/' . $order->id) }}"
                                         class="btn btn-danger">Cancel Order</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{ URL::to('generate.invoice/' . $order->id) }}"
+                                        class="btn btn-success">Generate
+                                        Invoice</a>
                                 </td>
                             </tr>
                         @endforeach

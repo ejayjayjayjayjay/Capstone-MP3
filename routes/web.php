@@ -1,14 +1,14 @@
 <?php
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomeragentController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderagentController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderCreateController;
-use App\Http\Controllers\CustomeragentController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,12 +99,15 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::resource('orderagent', OrderagentController::class);
     Route::get('/orderagent/delete-order/{id}', [OrderagentController::class, 'DeleteOrder'])->name('admin.Deleteorder');
+
     Route::resource('customers', CustomerController::class);
     Route::get('/customers/delete-customer/{id}', [CustomerController::class, 'Deletecustomer'])->name('agent.Deletecustomer');
 
 
     Route::get('/orders/create', [OrderCreateController::class, 'create'])
         ->name('ordercreate.index');
+
+    Route::get('generate.invoice/{order_id}', [OrderCreateController::class, 'invoice']);
 
     Route::post('/orders', [OrderCreateController::class, 'store'])
         ->name('ordercreate.store');

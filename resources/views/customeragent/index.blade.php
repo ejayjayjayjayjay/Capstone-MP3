@@ -4,42 +4,8 @@
 @section('content-header', 'Customer Management')
 @section('admin')
     <style>
-        .d-flex.align-items-center {
-            background-color: #f5f5f5;
-            padding: 10px;
-        }
-
-        h5.p-5.pb-2 {
-            margin: 0;
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        .font-22.ms-auto {
-            font-size: 22px;
-            color: #777;
-            cursor: pointer;
-        }
-
-        .container-fluid {
-            padding: 20px;
-        }
-
-        .card {
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
         form[action="{{ route('orders.index') }}"] {
             margin-bottom: 20px;
-        }
-
-        .col-md-5 {
-            padding-right: 10px;
         }
 
         input[type="date"].form-control {
@@ -47,10 +13,6 @@
             border: 1px solid #ccc;
             padding: 8px;
             width: 100%;
-        }
-
-        .col-md-2 {
-            padding-left: 10px;
         }
 
         .btn.btn-primary {
@@ -115,13 +77,16 @@
         tfoot th {
             text-align: right;
         }
+
+        ..box1 {
+            border-radius: 51px 5px;
+            border: 2px;
+        }
     </style>
     <div class="text-center">
         <h3 class="p-3 pb-0 font-weight-bold">Customers</h3>
     </div>
-    <div class="d-flex text-center">
-    </div>
-    <div class="card container-fluid">
+    <div class="box1 card container-fluid">
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">

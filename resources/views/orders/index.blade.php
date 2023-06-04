@@ -124,6 +124,11 @@
             display: flex;
             justify-content: center;
         }
+
+        .box1 {
+            border-radius: 51px 5px;
+            border: 2px;
+        }
     </style>
     <div class="text-center">
         <h3 class="p-3 pb-0 font-weight-bold">Ordered Products</h3>
@@ -131,7 +136,7 @@
     <div class="d-flex align-items-center">
     </div>
     <div class="container-fluid">
-        <div class="card">
+        <div class="box1 card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">

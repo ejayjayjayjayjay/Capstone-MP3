@@ -41,19 +41,12 @@
             margin-bottom: 20px;
         }
 
-        .col-md-5 {
-            padding-right: 10px;
-        }
 
         input[type="date"].form-control {
             border-radius: 5px;
             border: 1px solid #ccc;
             padding: 8px;
             width: 100%;
-        }
-
-        .col-md-2 {
-            padding-left: 10px;
         }
 
         .btn.btn-primary {

@@ -95,6 +95,9 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            -webkit-clip-path: polygon(100% 0%, 94% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+            clip-path: polygon(100% 0%, 94% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+
         }
 
         .title1 {
@@ -124,6 +127,7 @@
             --animate-delay: 0.5s;
         }
     </style>
+    <div class="custom-loader"></div>
     <div class="">
         <div class="container-fluid col-xxl-8">
             <div class="row flex-lg-nowrap align-items-center g-5">

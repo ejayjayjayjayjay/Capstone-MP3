@@ -8,12 +8,21 @@
         .form-group1 {
             padding-bottom: 15px;
         }
+
+        .calculator1 {
+            padding-top: 15px;
+        }
+
+        .box1 {
+            border-radius: 51px 5px;
+            border: 2px;
+        }
     </style>
     <div class="text-center">
         <h3 class="p-3 pb-0 font-weight-bold">Update Order & Payments Management</h3>
     </div>
-    <div class="col-6 mx-auto">
-        <div class="card container-fluid">
+    <div class="col-9 mx-auto">
+        <div class="box1 card container-fluid">
             <div class="card-body">
                 <form action="{{ route('orders.updates', ['order' => $order->id]) }}" method="POST">
                     @csrf
@@ -63,6 +72,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @section('js')

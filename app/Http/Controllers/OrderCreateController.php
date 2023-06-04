@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\Customer;
+use App\Models\User;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use PDF;
 
 class OrderCreateController extends Controller
 {
@@ -65,6 +67,26 @@ class OrderCreateController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->route('ordercreate.index')->with($notification);
+    }
+
+    /**
+     * Summary of invoice
+     * @param mixed $order_id
+     * @return Factory|View
+     */
+
+    public function invoice($order_id)
+    {
+        if (Order::where('id', $order_id)->exists()) {
+            $orders = Order::find($order_id);
+            $data = [
+                'orders' => $orders,
+            ];
+            $pdf = PDF::loadView('orderagent.invoice', $data);
+            return $pdf->download('document.pdf');
+        } else {
+            return redirect()->back()->with('status', 'No Order Found');
+        }
     }
 
 

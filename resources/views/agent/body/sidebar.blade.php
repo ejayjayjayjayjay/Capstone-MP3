@@ -12,7 +12,7 @@
 
         <li>
             <a href="{{ route('agent.dashboard') }}">
-                <div class="parent-icon"><i class='bx bx-cookie'></i>
+                <div class="parent-icon"><i class='bx bx-tachometer'></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
             </a>
@@ -28,7 +28,7 @@
 
         <li>
             <a href="{{ route('agent.Chatagent') }}">
-                <div class="parent-icon"><i class='bx bxs-user-detail'></i>
+                <div class="parent-icon"><i class='bx bxs-message'></i>
                 </div>
                 <div class="menu-title">Message</div>
             </a>
@@ -36,7 +36,7 @@
 
         <li>
             <a href="{{ route('orderagent.index') }}">
-                <div class="parent-icon"><i class='bx bx-cart'></i>
+                <div class="parent-icon"><i class='bx bxs-cart'></i>
                 </div>
                 <div class="menu-title">Status of Orders</div>
             </a>
@@ -44,7 +44,7 @@
 
         <li>
             <a href="{{ route('ordercreate.index') }}">
-                <div class="parent-icon"><i class='bx bx-cart'></i>
+                <div class="parent-icon"><i class='bx bxs-cart-add'></i>
                 </div>
                 <div class="menu-title">Add Order</div>
             </a>
@@ -52,15 +52,15 @@
 
         <li>
             <a href="{{ route('customers.index') }}">
-                <div class="parent-icon"><i class='bx bxs-user'></i>
+                <div class="parent-icon"><i class='bx bxs-user-plus'></i>
                 </div>
                 <div class="menu-title">Add Customer</div>
             </a>
         </li>
 
-        <li class="mb-5 pb-5">
+        <li class="mt-5">
             <a href="{{ route('agent.logout') }}">
-                <div class="parent-icon"><i class='bx bx-log-out'></i>
+                <div class="text-danger parent-icon"><i class='bx bx-log-out'></i>
                 </div>
                 <div class="menu-title">Logout</div>
             </a>
