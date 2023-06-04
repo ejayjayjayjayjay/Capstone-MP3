@@ -113,9 +113,9 @@
                     <div class="d-flex align-items-center">
                         <?php
                         // ...
-                        $rows = DB::table('customers')->count();
+                        $rows = DB::table('payments')->sum('total_profit');
                         ?>
-                        <h5 class="mb-0 text-white">{{ $rows }}</h5>
+                        <h5 class="mb-0 text-white h1">₱{{ $rows }}</h5>
                         <div class="ms-auto">
                             <i class='h1 bx bxs-user'></i>
                         </div>
@@ -125,7 +125,7 @@
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
-                        <p class="mb-0">Total Revenue</p>
+                        <p class="mb-0">Total Profits</p>
                         <p class="mb-0 ms-auto"><span><i class='bx bxs-wallet'></i></span></p>
                     </div>
                 </div>

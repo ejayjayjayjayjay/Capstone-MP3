@@ -1,6 +1,5 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\OrderController;
@@ -83,6 +82,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::resource('customeragent', CustomeragentController::class);
     Route::get('/customeragent/delete-customer/{id}', [CustomeragentController::class, 'DeleteCustomer'])->name('admin.Deletecustomer');
     Route::resource('orders', OrderController::class);
+    Route::put('/orders/{order}/edit', [OrderController::class, 'update'])->name('orders.updates');
+
+
 
 });
 //Agent Dashboard

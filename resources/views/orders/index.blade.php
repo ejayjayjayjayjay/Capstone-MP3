@@ -165,7 +165,10 @@
                             <th>Payment</th>
                             <th>Status</th>
                             <th>Date</th>
+                            <th>Agent Name</th>
                             <th>Total Paid</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -178,7 +181,11 @@
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->order_status }}</td>
                                 <td>{{ $order->created_at }}</td>
+                                <td>{{ $order->user->name }}</td>
                                 <td>{{ $order->total }}</td>
+                                <td>
+                                    <a href="{{ route('orders.edit', $order) }}" class="btn btn-primary">Update</a>
+                                </td>
                                 <td>
                                     <a href="{{ URL::to('/orders/delete-order/' . $order->id) }}"
                                         class="btn btn-danger">Delete</a>

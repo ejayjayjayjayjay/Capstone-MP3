@@ -126,14 +126,13 @@
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr class="text-center">
-                        <th>FULLNAME</th>
-                        <th>EMAIL</th>
-                        <th>PHONENUMBER</th>
-                        <th>ADDRESS</th>
-                        <th>DATE CREATED</th>
-                        <th>AGENT NAME</th>
-                        <th>EDIT</th>
-                        <th>DELETE</th>
+                        <th>Fullname</th>
+                        <th>Email</th>
+                        <th>Phonenumber</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Agent Name</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>

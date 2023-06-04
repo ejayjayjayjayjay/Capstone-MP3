@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('items');
-            $table->string('payments');
+            $table->integer('order_id');
+            $table->integer('total_commissions');
             $table->integer('total_profit');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

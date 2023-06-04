@@ -114,9 +114,13 @@
                     <div class="d-flex align-items-center">
                         <?php
                         // ...
-                        $rows = DB::table('customers')->count();
+                        $user_id = auth()->user()->id; // Assuming you are using authentication and want to get the logged-in user's ID
+                        
+                        $rows = DB::table('payments')
+                            ->where('user_id', $user_id)
+                            ->sum('total_commissions');
                         ?>
-                        <h5 class="mb-0 text-white">{{ $rows }}</h5>
+                        <h5 class="mb-0 text-white h1">₱{{ $rows }}</h5>
                         <div class="ms-auto">
                             <i class='h1 bx bxs-dollar-circle'></i>
                         </div>
@@ -126,7 +130,7 @@
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex align-items-center text-white">
-                        <p class="mb-0">Commissions</p>
+                        <p class="mb-0">Your Total Commissions</p>
                         <p class="mb-0 ms-auto"><span><i class='bx bx-up-arrow-alt'></i></span></p>
                     </div>
                 </div>

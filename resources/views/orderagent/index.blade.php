@@ -136,6 +136,7 @@
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
                         <tr class="text-center">
+                            <th>Product No.</th>
                             <th>Product</th>
                             <th>Customer</th>
                             <th>Quantity</th>
@@ -149,6 +150,7 @@
                     <tbody>
                         @foreach ($orders as $order)
                             <tr class="text-center fw-bold">
+                                <td>{{ $order->id }}</td>
                                 <td>{{ $order->product }}</td>
                                 <td>
                                     {{ $order->customer_id }}

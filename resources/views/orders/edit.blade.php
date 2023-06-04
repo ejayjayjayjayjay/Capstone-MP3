@@ -1,0 +1,76 @@
+@extends('admin.admin_dashboard')
+
+@section('title', 'Update Order')
+@section('content-header', 'Update Order')
+
+@section('admin')
+    <style>
+        .form-group1 {
+            padding-bottom: 15px;
+        }
+    </style>
+    <div class="text-center">
+        <h3 class="p-3 pb-0 font-weight-bold">Update Order & Payments Management</h3>
+    </div>
+    <div class="col-6 mx-auto">
+        <div class="card container-fluid">
+            <div class="card-body">
+                <form action="{{ route('orders.updates', ['order' => $order->id]) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="form-group">
+                        <label for="order_status" class="fw-bold">Order Status</label>
+                        <select name="order_status" id="order_status" class="form-control">
+                            <option value="pending" {{ $order->order_status == 'pending' ? 'selected' : '' }}>Pending
+                            </option>
+                            <option value="cancelled" {{ $order->order_status == 'cancelled' ? 'selected' : '' }}>Cancelled
+                            <option value="for delivery" {{ $order->order_status == 'for delivery' ? 'selected' : '' }}>for
+                                delivery
+                            </option>
+                            <option value="delivered" {{ $order->order_status == 'delivered' ? 'selected' : '' }}>delivered
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_id" class="fw-bold">Agent ID</label>
+                        <input type="number" name="user_id" id="user_id" class="form-control"
+                            value="{{ $order->user_id }}" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="agent_commission" class="fw-bold">Agent Commission</label>
+                        <input type="number" name="total_commissions" id="agent_commission" class="form-control"
+                            value="{{ $order->payment ? $order->payment->total_commissions : '' }}" required>
+                    </div>
+
+                    <div class="form-group1">
+                        <label for="profit" class="fw-bold">Profit</label>
+                        <input type="number" name="total_profit" id="profit" class="form-control"
+                            value="{{ $order->payment ? $order->payment->total_profit : '' }}" required>
+                    </div>
+
+                    <input type="hidden" name="user_id" value="{{ $order->payment ? $order->payment->user_id : '' }} "
+                        disabled>
+
+                    <button type="submit" class="btn btn-primary">Update Order</button>
+
+                    <a href="{{ route('orders.index') }}">
+                        <button type="button" class="btn btn-danger">Cancel</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            bsCustomFileInput.init();
+        });
+    </script>
+@endsection
