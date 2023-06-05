@@ -1,8 +1,8 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="w-75 mx-auto d-block"
-                alt="logo icon">
+            <a href="/"><img src="{{ asset('adminbackend/assets/images/UnitopLogo02.png') }}" class="w-75 mx-auto d-block"
+                alt="logo icon"></a>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -27,7 +27,7 @@
         </li>
 
         <li>
-            <a href="{{ route('admin.Chatagent') }}">
+            <a href="{{ route('chatify') }}">
                 <div class="parent-icon"><i class='bx bxs-message-dots'></i>
                 </div>
                 <div class="menu-title">Message</div>
