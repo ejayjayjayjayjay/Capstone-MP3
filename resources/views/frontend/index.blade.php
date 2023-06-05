@@ -9,8 +9,6 @@
             overflow-x: hidden;
         }
 
-        < !-- HTML !--><button class="button-30" role="button">Button 30</button>
-
         /* CSS */
         .button-30 {
             align-items: center;
@@ -90,13 +88,11 @@
         .backgroundpara1 {
             height: 80vh;
             width: 100vw;
-            background-image: url("frontend/assets/images/welderbackra.jpg");
+            background-image: url("frontend/assets/images/parallax1.png");
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            -webkit-clip-path: polygon(100% 0%, 94% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-            clip-path: polygon(100% 0%, 94% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 
         }
 
@@ -107,13 +103,16 @@
         .mobileApp {
             color: white;
             text-align: justify;
+            font-size: 21px;
+            font-size: 10px line-height: 1.8;
+            -webkit-text-stroke: 1px black;
         }
 
+
         #box1 {
-            max-width: 600px;
-            padding: 2px;
+            max-width: 500px;
             background: rgba(255, 255, 255, .2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
         }
 
         /* This only changes this particular animation duration */
@@ -125,6 +124,35 @@
         :root {
             --animate-duration: 800ms;
             --animate-delay: 0.5s;
+        }
+
+        .alt {
+            --a: 8deg;
+            /* control the angle of rotation (the smaller, the better) */
+            aspect-ratio: 1;
+            border-radius: 20px;
+            transform: perspective(400px) rotate3d(var(--i, 1, -1), 0, var(--a));
+            -webkit-mask:
+                linear-gradient(135deg, #000c 40%, #000, #000c 60%) 100% 100%/240% 240%;
+            transition: .4s;
+            cursor: pointer;
+            justify-content: center;
+        }
+
+        .alt {
+            --i: 1, 1;
+            -webkit-mask:
+                linear-gradient(45deg, #000c 40%, #000, #000c 60%) 0 100%/240% 240%;
+        }
+
+        .alt:hover {
+            --i: -1, 1;
+            -webkit-mask-position: 0 0;
+        }
+
+        .alt:hover {
+            --i: -1, -1;
+            -webkit-mask-position: 100% 0;
         }
     </style>
     <div class="custom-loader"></div>
@@ -195,19 +223,19 @@
             <div class="container">
                 <div class="row element">
 
-                    <div class="col-lg-4 p-5">
-                        <img class="img-fluid" src="{{ asset('frontend/assets/images/wireMesh.jpg') }}">
+                    <div class="alt col-lg-4 p-5">
+                        <img class=" img-fluid" src="{{ asset('frontend/assets/images/wireMesh.jpg') }}">
                         <h5 class="mb-2"><b>WM 140</b></h5>
                         <p>WIRE MESH (15 DIFFERENT SIZES)</p>
                     </div>
 
-                    <div class="col-lg-4 p-5">
+                    <div class="alt col-lg-4 p-5">
                         <img class="img-fluid" src="{{ asset('frontend/assets/images/stackableBasket.jpg') }}">
                         <h5 class="mb-2"><b>SB 50-L</b></h5>
                         <p>STACKABLE BASKET ( CHIP RACK )</p>
                     </div>
 
-                    <div class="col-lg-4 p-5">
+                    <div class="alt col-lg-4 p-5">
                         <img class="img-fluid" src="{{ asset('frontend/assets/images/revolving.jpg') }}">
                         <h5 class="mb-2"><b>RSQ 52-L</b></h5>
                         <p>REVOLVING SQUARE LONG</p>
@@ -220,26 +248,23 @@
     <!-- SERVICES --- END -->
 
     <section class="backgroundpara1">
-        <div class="container mb-5">
+        <div class="container">
             <div class="row">
-                <h1 class="title1 text-center"><span class="fw-bold">Our <span class="title-ready">Mobile App</span></span>
+                <h1 class="title1 text-center mb-5"><span class="fw-bold">Our <span class="title-ready">Mobile
+                            App</span></span>
                 </h1>
-                <div class="d-flex pt-5">
+                <div class="d-flex">
                     <div class="col-md-6">
-                        <img class="w-100 img-fluid" src="{{ asset('frontend/assets/images/unitoplogo2.svg') }}"
+                        <img class="w-75 img-fluid" src="{{ asset('frontend/assets/images/mobileapp.png') }}"
                             alt="">
                     </div>
-                    <div id="box1" class="clas-md-6 text-center text-justify">
-                        <p class="mobileApp fw-bold">At Unitop Metalwire Technologies, we understand the importance
+                    <div class="clas-md-6 text-center">
+                        <p id="box1" class="mobileApp fw-bold">&nbsp&nbsp&nbsp&nbspAt Unitop Metalwire Technologies, we
+                            understand the
+                            importance
                             of turning your ideas into tangible, awe-inspiring structures. Whether you're an architect,
                             designer, contractor, or a visionary individual, our skilled team is dedicated to providing
-                            top-notch
-                            metalwork solutions that surpass expectations.
-
-                            Analytics and Reporting: Our app provides powerful analytics and reporting features that offer
-                            valuable insights into project performance and productivity. Agents and admins can generate
-                            customized reports, track key metrics, and identify areas for improvement, facilitating
-                            data-driven decision-making.</p>
+                            top-notch metalwork solutions that surpass expectations.</p>
                         <button class="button-73"><a class="text-decoration-none text-dark"
                                 href="{{ asset('frontend/assets/images/_Unitop_Metal_Wire_Corp_17170169.apk') }}"
                                 download>Download Apk</a></button>
