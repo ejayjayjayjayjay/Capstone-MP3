@@ -5,7 +5,36 @@
             </div>
             <div class="top-menu ms-auto">
                 <ul class="navbar-nav align-items-center">
- 
+
+                    <li class="nav-item dropdown dropdown-large">
+
+                    </li>
+                    <li class="nav-item dropdown dropdown-large">
+
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <div class="header-notifications-list">
+                                <a class="dropdown-item" href="javascript:;">
+
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a href="javascript:;">
+
+                            </a>
+                            <div class="header-message-list">
+                                <a class="dropdown-item" href="javascript:;">
+
+                                </a>
+
+                            </div>
+                            <a href="javascript:;">
+                                <div class="text-center msg-footer">View All Messages</div>
+                            </a>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
