@@ -48,6 +48,9 @@
                                                 <label for="inputEmailAddress" class="form-label">Email Address</label>
                                                 <input type="email" name="email" class="form-control" id="email"
                                                     placeholder="Email Address">
+                                                    @error('email')
+                                                        <p class="m-0 small alert alert-danger shadow-sm">{{$message}}</p>
+                                                    @enderror
                                             </div>
                                             <div class="col-12">
                                                 <label for="inputChoosePassword" class="form-label">Enter
@@ -59,16 +62,12 @@
                                                         class="input-group-text bg-transparent"><i
                                                             class='bx bx-hide'></i></a>
                                                 </div>
+                                                @error('password')
+                                                    <p class="m-0 small alert alert-danger shadow-sm">{{$message}}</p>
+                                                @enderror
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="flexSwitchCheckChecked" checked>
-                                                    <label class="form-check-label"
-                                                        for="flexSwitchCheckChecked">Remember Me</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 text-end">
+
+                                            <div class="col-md-12 text-center">
                                                 <br>
                                                 <div class="col-12 text-center">
                                                     <div class="d-grid">
@@ -76,6 +75,7 @@
                                                                 class="bx bxs-lock-open"></i>Sign in</button>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
