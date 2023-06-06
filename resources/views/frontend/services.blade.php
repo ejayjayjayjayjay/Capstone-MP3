@@ -28,6 +28,91 @@
         .product1:hover {
             outline: 5px solid #000000;
         }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 50%;
+            max-width: 600px;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 70px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Hide the slides by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 70px;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
     </style>
 
 
@@ -131,10 +216,10 @@
             <div class="row">
 
                 <div class="col-sm-6 col-md-4 text-center">
-                    <div class="thumbnail">
+                    <div class="thumbnail column">
                         {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/bicycleBasket.jpg') }}"> --}}
                         <img class="product1 img-fluid" src="{{ asset('frontend/assets/images/bicycleBasket.jpg') }}"
-                            alt="">
+                            alt="" onclick="openModal();currentSlide(1)" class="hover-shadow">
                         </a>
                         <div class="caption">
                             <h3>BB 131</h3>
@@ -143,10 +228,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
-                    <div class="thumbnail">
+                    <div class="thumbnail column">
                         {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/apCabinetBasket.jpg') }}"> --}}
                         <img class="product1 img-fluid" src="{{ asset('frontend/assets/images/apCabinetBasket.jpg') }}"
-                            alt="Bridge">
+                            alt="Bridge" onclick="openModal();currentSlide(2)" class="hover-shadow">
                         </a>
                         <div class="caption">
                             <h3>KC-010</h3>
@@ -155,10 +240,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
-                    <div class="thumbnail">
+                    <div class="thumbnail column">
                         {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/showerCaddy.jpg') }}"> --}}
                         <img class="product1 img-fluid" src="{{ asset('frontend/assets/images/showerCaddy.jpg') }}"
-                            alt="Tuneel">
+                            alt="Tuneel" onclick="openModal();currentSlide(3)" class="hover-shadow">
                         </a>
                         <div class="caption">
                             <h3>BR-124</h3>
@@ -167,10 +252,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
-                    <div class="thumbnail">
+                    <div class="thumbnail column">
                         {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/doubleDeck.jpg') }}"> --}}
                         <img class="product1 img-fluid" src="{{ asset('frontend/assets/images/doubleDeck.jpg') }}"
-                            alt="Coast">
+                            alt="Coast" onclick="openModal();currentSlide(4)" class="hover-shadow">
                         </a>
                         <div class="caption">
                             <h3>DD-202</h3>
@@ -179,10 +264,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
-                    <div class="thumbnail">
+                    <div class="thumbnail column">
                         {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/hangingPlate.jpg') }}"> --}}
                         <img class="product1 img-fluid" src="{{ asset('frontend/assets/images/hangingPlate.jpg') }}"
-                            alt="Rails">
+                            alt="Rails" onclick="openModal();currentSlide(5)" class="hover-shadow">
                         </a>
                         <div class="caption">
                             <h3>KU-114 & KU-113</h3>
@@ -191,10 +276,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
-                    <div class="thumbnail">
+                    <div class="thumbnail column">
                         {{-- <a class="lightbox" href="{{ asset('frontend/assets/images/openBasket.jpg') }}"> --}}
                         <img class="product1 img-fluid" src="{{ asset('frontend/assets/images/openBasket.jpg') }}"
-                            alt="Traffic">
+                            alt="Traffic" onclick="openModal();currentSlide(6)" class="hover-shadow">
                         </a>
                         <div class="caption">
                             <h3>O-45</h3>
@@ -207,4 +292,94 @@
         </div>
 
     </div>
+
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img class="img-fluid" src="{{ asset('frontend/assets/images/bicycleBasket.jpg') }}" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img class="img-fluid" src="{{ asset('frontend/assets/images/apCabinetBasket.jpg') }}"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img class="img-fluid" src="{{ asset('frontend/assets/images/showerCaddy.jpg') }}" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img class="img-fluid" src="{{ asset('frontend/assets/images/doubleDeck.jpg') }}" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img class="img-fluid" class="img-fluid" src="{{ asset('frontend/assets/images/hangingPlate.jpg') }}"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img class="img-fluid" src="{{ asset('frontend/assets/images/openBasket.jpg') }}" style="width:100%">
+            </div>
+
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+    </div>
+    <script>
+        // Open the Modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Close the Modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
 @endsection
