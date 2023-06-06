@@ -36,7 +36,13 @@ class OrderCreateController extends Controller
 
 
     public function store(Request $request)
-    {
+    {   
+        $image_path = '';
+
+        if ($request->hasFile('image')) {
+            $image_path = $request->file('image')->store('products', 'public');
+        }
+        
         $order = new Order();
         $order->product = $request->input('product');
         $order->customer_id = $request->input('customer_id');
@@ -77,13 +83,10 @@ class OrderCreateController extends Controller
 
     public function invoice($order_id)
     {
-        if (Order::where('id', $order_id)->exists()) {
+        if (Order::where('id', $order_id)->exists())
+        {
             $orders = Order::find($order_id);
-            $data = [
-                'orders' => $orders,
-            ];
-            $pdf = PDF::loadView('orderagent.invoice', $data);
-            return $pdf->download('document.pdf');
+            return view('orderagent.invoice', compact('orders'));
         } else {
             return redirect()->back()->with('status', 'No Order Found');
         }

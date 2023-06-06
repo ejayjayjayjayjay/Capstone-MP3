@@ -85,6 +85,8 @@
             }
         }
 
+
+
         .backgroundpara1 {
             height: 80vh;
             width: 100vw;
@@ -97,21 +99,20 @@
         }
 
         .title1 {
-            color: white;
+            color: rgb(0, 0, 0);
         }
 
         .mobileApp {
-            color: white;
+            color: rgb(0, 0, 0);
             text-align: justify;
             font-size: 21px;
             font-size: 10px line-height: 1.8;
-            -webkit-text-stroke: 1px black;
         }
 
 
         #box1 {
             max-width: 500px;
-            background: rgba(255, 255, 255, .2);
+            background: rgba(37, 37, 37, 0.075);
             box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
         }
 
@@ -259,7 +260,9 @@
                             alt="">
                     </div>
                     <div class="clas-md-6 text-center">
-                        <p id="box1" class="mobileApp fw-bold">&nbsp&nbsp&nbsp&nbspAt Unitop Metalwire Technologies, we
+                        <p id="box1" class="mobileApp fw-bold">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAt
+                            Unitop Metalwire
+                            Technologies, we
                             understand the
                             importance
                             of turning your ideas into tangible, awe-inspiring structures. Whether you're an architect,

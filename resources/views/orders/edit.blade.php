@@ -29,7 +29,7 @@
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="order_status" class="fw-bold">Order Status</label>
+                        <label for="order_status" class="fw-bold">Update Order Status</label>
                         <select name="order_status" id="order_status" class="form-control">
                             <option value="pending" {{ $order->order_status == 'pending' ? 'selected' : '' }}>Pending
                             </option>

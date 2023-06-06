@@ -129,6 +129,10 @@
             border-radius: 51px 5px;
             border: 2px;
         }
+
+        #name {
+            width: 30%;
+        }
     </style>
     <div class="text-center">
         <h3 class="p-3 pb-0 font-weight-bold">Ordered Products</h3>
@@ -152,11 +156,22 @@
                                 </div>
                                 <div class="col-md-2">
                                     <button class="btn btn-primary" type="submit">
-                                        <i class="fas fa-filter"></i> Filter
+                                        <i class="fas fa-filter"></i> Filter By Date
                                     </button>
                                 </div>
                             </div>
                         </form>
+
+                        <form action="{{ route('orders.index') }}" method="GET">
+                            <div class="form-group col-xs-4">
+                                <label for="name">Name of Customer:</label>
+                                <input type="text" id="name" name="name" class="form-control col-xs-4"
+                                    placeholder="Enter name">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-3">Filter By Name</button>
+                        </form>
+
                     </div>
                 </div>
                 <hr>
@@ -170,6 +185,7 @@
                             <th>Payment</th>
                             <th>Status</th>
                             <th>Date</th>
+                            <th>Date Updated</th>
                             <th>Agent Name</th>
                             <th>Total Paid</th>
                             <th>Edit</th>
@@ -186,6 +202,7 @@
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->order_status }}</td>
                                 <td>{{ $order->created_at }}</td>
+                                <td>{{ $order->updated_at }}</td>
                                 <td>{{ $order->user->name }}</td>
                                 <td>{{ $order->total }}</td>
                                 <td>

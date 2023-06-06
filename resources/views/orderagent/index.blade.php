@@ -166,8 +166,7 @@
                                         class="btn btn-danger">Cancel Order</a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="{{ URL::to('generate.invoice/' . $order->id) }}"
-                                        class="btn btn-success">Generate
+                                    <a href="{{ URL::to('generate.invoice/' . $order->id) }}" class="btn btn-success">Print
                                         Invoice</a>
                                 </td>
                             </tr>

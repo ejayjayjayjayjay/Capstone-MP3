@@ -3,10 +3,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Payment;
 use App\Models\Commission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\OrderStoreRequest;
-use App\Models\Payment;
 
 class OrderController extends Controller
 {
@@ -14,18 +15,26 @@ class OrderController extends Controller
     {
         $orders = Order::query();
 
-        if ($request->start_date) {
-            $orders->where('created_at', '>=', $request->start_date);
-        }
-
-        if ($request->end_date) {
-            $orders->where('created_at', '<=', $request->end_date . ' 23:59:59');
-        }
-
-        $orders = $orders->with('customer')->latest()->paginate(10);
-
-        return view('orders.index', compact('orders'));
+    if ($request->start_date) {
+        $orders->where('created_at', '>=', $request->start_date);
     }
+
+    if ($request->end_date) {
+        $orders->where('created_at', '<=', $request->end_date . ' 23:59:59');
+    }
+
+    if ($request->name) {
+        $orders->whereHas('customer', function ($query) use ($request) {
+            $query->where('first_name', 'like', '%' . $request->name . '%');
+        });
+    }
+
+    $orders = $orders->with('customer')->latest()->paginate(10);
+
+    return view('orders.index', compact('orders'));
+
+    }
+
 
     public function create()
     {
@@ -75,7 +84,7 @@ class OrderController extends Controller
         // Update or create commission record
         $commission = Commission::updateOrCreate(
             ['order_id' => $order->id],
-            [   
+            [
                 'user_id' => $request->input('user_id'),
                 'total_commissions' => $request->input('total_commissions'),
                 'total_profit' => $request->input('total_profit'),
@@ -91,4 +100,26 @@ class OrderController extends Controller
 
         return redirect()->route('orders.index')->with('success', 'Order updated successfully.');
     }
+
+    public function DeleteOrder($id) {
+
+            $delete = DB::table('orders')->where('id',$id)->delete();
+            if ($delete)
+            {
+                $notification = array(
+                    'message' => 'Order has been Successfully Deleted',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('orders.index')->with($notification);
+            }
+            else
+            {
+                $notification = array(
+                    'message' => 'Something is Wrong, Please Try Again!',
+                    'alert-type' => 'error'
+                );
+                return redirect()->route('orders.index')->with($notification);
+            }
+
+        }//End Method
 }

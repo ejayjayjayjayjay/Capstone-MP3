@@ -1,4 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<style>
+    .navbar {
+        background-color: #6b6969;
+    }
+</style>
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container px-5">
         <a class="navbar-brand" href="/"><img class="img-fluid"
                 src="{{ asset('frontend/assets/images/UnitopLogo02.png') }}" alt="logo" style="height: 50px;"></a>

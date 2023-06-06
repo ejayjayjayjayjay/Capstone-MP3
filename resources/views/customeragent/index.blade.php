@@ -97,7 +97,6 @@
                         <th>Address</th>
                         <th>Date</th>
                         <th>Agent Name</th>
-                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -109,10 +108,6 @@
                             <td>{{ $row->address }}</td>
                             <td>{{ $row->created_at }}</td>
                             <td>{{ $row->user->name }}</td>
-                            <td>
-                                <a href="{{ URL::to('/customeragent/delete-customer/' . $row->id) }}"
-                                    class="btn btn-sm btn-danger">Delete</a>
-                            </td>
                         </tr>
                     @endforeach
                 </tbody>

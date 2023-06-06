@@ -264,7 +264,7 @@
                             <tr class="text-center fw-bold">
                                 <td>{{ $products[$productId]->id }}</td>
                                 <td>{{ $products[$productId]->name }}</td>
-                                <td><button class="button-54">{{ $products[$productId]->description }}</button></td>
+                                <td>{{ $products[$productId]->description }}</td>
                                 <td>₱ {{ $products[$productId]->price }}</td>
                                 <td>{{ $products[$productId]->quantity }}</td>
                             </tr>
@@ -272,7 +272,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div>as
         </div>
     </div>
 @endsection

@@ -83,6 +83,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/customeragent/delete-customer/{id}', [CustomeragentController::class, 'DeleteCustomer'])->name('admin.Deletecustomer');
     Route::resource('orders', OrderController::class);
     Route::put('/orders/{order}/edit', [OrderController::class, 'update'])->name('orders.updates');
+    Route::get('/orders/delete-order/{id}', [OrderController::class, 'DeleteOrder'])->name('admin.Deleteorders');
+
 
 
 

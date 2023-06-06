@@ -45,4 +45,5 @@ class Order extends Model
             return $i->price;
         })->sum();
     }
+
 }
