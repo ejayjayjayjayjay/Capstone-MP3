@@ -5,6 +5,12 @@
 
 @section('admin')
 
+    <div class="col-10 card container">
+        <div class="card-body">
+            <h3 class="fw-bold text-center">Create Product</h3>
+        </div>
+    </div>
+
     <div class="card">
         <div class="card-body">
 
@@ -80,7 +86,7 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
+                <div class="form-group pb-3">
                     <label for="status">Status</label>
                     <select name="status" class="form-control @error('status') is-invalid @enderror" id="status">
                         <option value="1" {{ old('status') === 1 ? 'selected' : '' }}>Active</option>

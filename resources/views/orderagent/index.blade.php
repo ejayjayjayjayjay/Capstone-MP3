@@ -125,12 +125,13 @@
             justify-content: center;
         }
     </style>
-
-    <div class="container-fluid">
-        <div class="text-center">
-            <h3 class="p-5 pb-2 font-weight-bold">Order Status</h3>
+    <div class="col-10 card container">
+        <div class="card-body">
+            <h3 class="fw-bold text-center">Status of Orders</h3>
         </div>
-        <div class="card">
+    </div>
+    <div class="container-fluid">
+        <div class="">
             <div class="card-body">
                 <hr>
                 <table class="table table-bordered table-hover">

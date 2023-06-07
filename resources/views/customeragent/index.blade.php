@@ -83,11 +83,13 @@
             border: 2px;
         }
     </style>
-    <div class="text-center">
-        <h3 class="p-3 pb-0 font-weight-bold">Customers</h3>
-    </div>
-    <div class="box1 card container-fluid">
+    <div class="col-10 card container">
         <div class="card-body">
+            <h3 class="fw-bold text-center">List of Customers</h3>
+        </div>
+    </div>
+    <div class="box1 container-fluid pt-5">
+        <div class="">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr class="text-center">

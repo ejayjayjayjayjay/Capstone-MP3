@@ -134,14 +134,14 @@
             width: 30%;
         }
     </style>
-    <div class="text-center">
-        <h3 class="p-3 pb-0 font-weight-bold">Ordered Products</h3>
+    <div class="col-10 card container">
+        <div class="card-body">
+            <h3 class="fw-bold text-center">List of Orders</h3>
+        </div>
     </div>
-    <div class="d-flex align-items-center">
-    </div>
-    <div class="container-fluid">
-        <div class="box1 card">
-            <div class="card-body">
+    <div class="container-fluid pt-5">
+        <div class="box1">
+            <div class="">
                 <div class="row">
                     <div class="col-md-12">
                         <form action="{{ route('orders.index') }}" method="GET">
@@ -184,7 +184,7 @@
                             <th>Quantity</th>
                             <th>Payment</th>
                             <th>Status</th>
-                            <th>Date</th>
+                            <th>Date of Order</th>
                             <th>Date Updated</th>
                             <th>Agent Name</th>
                             <th>Total Paid</th>

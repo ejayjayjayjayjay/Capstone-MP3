@@ -66,7 +66,7 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
+                <div class="form-group pb-3">
                     <label for="avatar">Avatar</label>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" name="avatar" id="avatar">

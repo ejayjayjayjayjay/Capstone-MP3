@@ -18,8 +18,10 @@
             border: 2px;
         }
     </style>
-    <div class="text-center">
-        <h3 class="p-3 pb-0 font-weight-bold">Update Order & Payments Management</h3>
+    <div class="col-10 card container">
+        <div class="card-body">
+            <h3 class="fw-bold text-center">Update Order & Agent Commission</h3>
+        </div>
     </div>
     <div class="col-9 mx-auto">
         <div class="box1 card container-fluid">

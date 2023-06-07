@@ -112,8 +112,10 @@
             text-align: right;
         }
     </style>
-    <div class="text-center">
-        <h3 class="p-3 pb-0 font-weight-bold">Products List</h3>
+    <div class="col-10 card container">
+        <div class="card-body">
+            <h3 class="fw-bold text-center">Add Products</h3>
+        </div>
     </div>
     <div class="d-flex align-items-center">
         <div class="d-flex align-items-center mb-3">
@@ -121,8 +123,8 @@
             <a href="{{ route('products.create') }}" class="btn btn-success">Add Product</a>
         </div>
     </div>
-    <div class="card product-list container-fluid">
-        <div class="card-body">
+    <div class="product-list container-fluid">
+        <div class="">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr class="text-center">

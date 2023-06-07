@@ -187,11 +187,16 @@
             }
         }
     </style>
+    <div class="col-10 card container">
+        <div class="card-body">
+            <h3 class="fw-bold text-center">Add Order</h3>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col">
                 <div class="text-center">
-                    <h3 class="p-5 pb-2 font-weight-bold">Add Orders</h3>
+                    <h3 class="p-5 pb-2 font-weight-bold"></h3>
                 </div>
                 <form class="form1" action="{{ route('ordercreate.store') }}" method="POST">
                     @csrf
@@ -272,7 +277,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>as
+            </div>
         </div>
     </div>
 @endsection

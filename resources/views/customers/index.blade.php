@@ -116,18 +116,18 @@
             text-align: right;
         }
     </style>
-    <div class="text-center">
-        <h3 class="p-5 pb-2 font-weight-bold">Add Customer</h3>
+    <div class="col-10 card container">
+        <div class="card-body">
+            <h3 class="fw-bold text-center">Add Customer</h3>
+        </div>
     </div>
     <div class="d-flex align-items-center">
         <div class="d-flex justify-content-end align-items-end mb-3">
             <a href="{{ route('customers.create') }}" class="btn btn-success btn-add-customer">Add Customer</a>
         </div>
-        <div class="font-22 ms-auto"><i class="bx bx-dots-horizontal-rounded"></i>
-        </div>
     </div>
-    <div class="card container-fluid">
-        <div class="card-body">
+    <div class="container">
+        <div class="">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr class="text-center">
