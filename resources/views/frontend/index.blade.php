@@ -9,39 +9,6 @@
             overflow-x: hidden;
         }
 
-        /* CSS */
-        .button-30 {
-            align-items: center;
-            appearance: none;
-            background-color: #FCFCFD;
-            border-radius: 4px;
-            border-width: 0;
-            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-            box-sizing: border-box;
-            color: #36395A;
-            cursor: pointer;
-            display: inline-flex;
-            font-family: "JetBrains Mono", monospace;
-            height: 48px;
-            justify-content: center;
-            line-height: 1;
-            list-style: none;
-            overflow: hidden;
-            padding-left: 16px;
-            padding-right: 16px;
-            position: relative;
-            text-align: left;
-            text-decoration: none;
-            transition: box-shadow .15s, transform .15s;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            white-space: nowrap;
-            will-change: box-shadow, transform;
-            font-size: 18px;
-        }
-
-        /* CSS */
         .button-73 {
             appearance: none;
             background-color: #FFFFFF;
@@ -66,6 +33,7 @@
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
+
         }
 
         .button-73:hover {
@@ -88,7 +56,7 @@
 
 
         .backgroundpara1 {
-            height: 80vh;
+            height: 60vh;
             width: 100vw;
             background-image: url("frontend/assets/images/parallax1.png");
             background-position: center;
@@ -97,6 +65,19 @@
             background-size: cover;
 
         }
+
+        @media screen and (max-width: 768px) {
+            .mobilephobelogo {
+                display: none;
+            }
+
+            .mobileApp {
+                font-size: 10px;
+                line-height: 1.0;
+                text-align: center;
+            }
+        }
+
 
         .title1 {
             color: rgb(0, 0, 0);
@@ -248,34 +229,31 @@
 
     <!-- SERVICES --- END -->
 
-    <section class="backgroundpara1">
-        <div class="container">
-            <div class="row">
-                <h1 class="title1 text-center mb-5"><span class="fw-bold">Our <span class="title-ready">Mobile
-                            App</span></span>
-                </h1>
-                <div class="d-flex">
-                    <div class="col-md-6">
-                        <img class="w-75 img-fluid" src="{{ asset('frontend/assets/images/mobileapp.png') }}"
-                            alt="">
-                    </div>
-                    <div class="clas-md-6 text-center">
-                        <p id="box1" class="mobileApp fw-bold">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAt
-                            Unitop Metalwire
-                            Technologies, we
-                            understand the
-                            importance
-                            of turning your ideas into tangible, awe-inspiring structures. Whether you're an architect,
-                            designer, contractor, or a visionary individual, our skilled team is dedicated to providing
-                            top-notch metalwork solutions that surpass expectations.</p>
-                        <button class="button-73"><a class="text-decoration-none text-dark"
-                                href="{{ asset('frontend/assets/images/_Unitop_Metal_Wire_Corp_17170169.apk') }}"
-                                download>Download Apk</a></button>
-                    </div>
-                </div>
+    <div class="text-center pb-5">
+        <h2 class="title1"><span class="fw-bold">Our <span class="title-ready">Mobile
+                    App</span></span>
+        </h2>
+        <p>Where innovation meets reliability.</p>
+    </div>
+    <div class="backgroundpara1 container-fluid p-5">
+        <div class="row">
+            <div class="mobilephobelogo col-md-6 ">
+                <img class="w-75 img-fluid mx-auto" src="{{ asset('frontend/assets/images/mobileapp.png') }}"
+                    alt="">
+            </div>
+            <div class="col-md-6 text-center">
+                <p id="box1" class="mobileApp fw-bold line">
+                    At
+                    Unitop Metalwire Technologies, we understand the importance
+                    of turning your ideas into tangible, awe-inspiring structures. Whether you're an architect,
+                    designer, contractor, or a visionary individual, our skilled team is dedicated to providing
+                    top-notch metalwork solutions that surpass expectations.</p>
+                <button class="button-73"><a class="text-decoration-none text-dark"
+                        href="{{ asset('frontend/assets/images/_Unitop_Metal_Wire_Corp_17170169.apk') }}" download>Download
+                        Apk</a></button>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- CLIENT COMMENTS -->
     <div class="testimonial-area mb-3">
@@ -302,7 +280,8 @@
                                     <i class="fa fa-comments"></i>
                                 </div>
                                 <div class="content text-center">
-                                    <p>"I have been a customer of your metal wire business for several years now, and I must
+                                    <p>"I have been a customer of your metal wire business for several years now, and I
+                                        must
                                         say that your products never disappoint. The wire is always of high quality and
                                         meets my specifications perfectly. Your exceptional customer service is an added
                                         bonus. Keep up the great work!"</p>
@@ -318,8 +297,10 @@
                                 </div>
                                 <div class="content text-center">
                                     <p>I wanted to express my gratitude for the outstanding service I received from your
-                                        metal wire business. Your knowledgeable staff helped me choose the right type and
-                                        gauge of wire for my project, and it turned out to be the perfect fit. The quality
+                                        metal wire business. Your knowledgeable staff helped me choose the right type
+                                        and
+                                        gauge of wire for my project, and it turned out to be the perfect fit. The
+                                        quality
                                         of the wire is exceptional, and I couldn't be happier with my purchase.</p>
                                     <div class="person"><img alt=""
                                             src="{{ asset('frontend/assets/images/oishiRound.png') }}"></div>
@@ -331,8 +312,10 @@
                                     <i class="fa fa-comments"></i>
                                 </div>
                                 <div class="content text-center">
-                                    <p>"I'm thoroughly impressed with the level of professionalism and expertise exhibited
-                                        by your metal wire business. Your team was incredibly helpful in assisting me with
+                                    <p>"I'm thoroughly impressed with the level of professionalism and expertise
+                                        exhibited
+                                        by your metal wire business. Your team was incredibly helpful in assisting me
+                                        with
                                         my order, and the wire I received was exactly what I needed. It's clear that you
                                         take pride in your products and value your customers. Thank you for a great
                                         experience!"</p>

@@ -166,7 +166,7 @@
             </div>
             <!--end col-->
 
-            <div class="col-lg-6 col-md-6 col-12 order-1 order-md-2">
+            <div class="col-lg-6 col-md-6 col-12 order-1 order-md-2 text-center">
                 <div class="section-title ml-lg-5">
                     <h1 class="text-custom font-weight-normal mb-3">Our Services</h1>
                     <h4 class="title mb-4">

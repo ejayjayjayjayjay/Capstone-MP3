@@ -44,7 +44,7 @@
     </div>
 
 
-    <div class="col-12 d-flex justify-content-center align-items-center text-center pb-5">
+    <div class="col-12 d-flex justify-content-center align-items-center text-center pb-5 pt-5">
         <div class="container">
 
             <div class="row">
