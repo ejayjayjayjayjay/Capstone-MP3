@@ -5,7 +5,7 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">UNITOP MESSAGES</span> </a>
+                <a href="/dashboard"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">UNITOP MESSAGES</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
@@ -62,8 +62,15 @@
                 </div>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
+                    <@php
+                        $previous = "javascript:history.go(-1)";
+                        if(isset($_SERVER['HTTP_REFERER'])) {
+                        $previous = $_SERVER['HTTP_REFERER'];
+                        }
+                    @endphp
+                    <a href="<?= $previous ?>">Go Back to Dashboad </a>
                     <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a>
-                    <a href="dashboard"><i class="fas fa-home"></i></a>
+                    {{-- <a href="javascript:history.go(-1)"><i class="fas fa-home"></i></a> --}}
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
                 </nav>
             </nav>
